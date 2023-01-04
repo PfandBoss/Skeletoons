@@ -12,6 +12,8 @@ public class ThirdPersonThrowingController : MonoBehaviour
     [SerializeField] private float normalSensitivity;
     [SerializeField] private float aimSensitivity;
 
+    [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+    [SerializeField] private Transform debugTransform;
     private ThirdPersonController _thirdPersonController;
     private StarterAssetsInputs _starterAssetsInputs;
 
@@ -24,14 +26,28 @@ public class ThirdPersonThrowingController : MonoBehaviour
 
     private void Update()
     {
+        Vector3 mouseWorldPosition = Vector3.zero;
+        Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
+        {
+            mouseWorldPosition = raycastHit.point;
+        }
         if (_starterAssetsInputs.aim)
         {
             aimVirtualCamera.gameObject.SetActive(true);
             _thirdPersonController.SetSensitivity(aimSensitivity);
+            _thirdPersonController.SetRotateOnMove(false);
+            Vector3 worldAimTarget = mouseWorldPosition;
+            worldAimTarget.y = transform.position.y;
+            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+
+            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime + 20f);
         }
         else
         {
             aimVirtualCamera.gameObject.SetActive(false);
+            _thirdPersonController.SetRotateOnMove(true);
             _thirdPersonController.SetSensitivity(normalSensitivity);
         }
     }
