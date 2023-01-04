@@ -14,7 +14,7 @@ namespace StarterAssets
 		public bool sprint;
 		public bool aim;
 		public bool sneek;
-
+		public bool shoot;
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -49,6 +49,10 @@ namespace StarterAssets
 		{
 			AimInput(value.isPressed);
 		}
+		public void OnShoot(InputValue value)
+		{
+			ShootInput(value.isPressed);
+		}
 		public void OnSneek(InputValue value)
 		{
 			SneekInput(value.isPressed);
@@ -82,6 +86,11 @@ namespace StarterAssets
 		public void SneekInput(bool newSneekState)
 		{
 			sneek = newSneekState;
+		}
+
+		public void ShootInput(bool newShootState)
+		{
+			shoot = newShootState;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)

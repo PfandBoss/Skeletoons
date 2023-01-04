@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using StarterAssets;
+using Unity.VisualScripting;
 using UnityEngine.PlayerLoop;
+using Object = UnityEngine.Object;
 
 public class ThirdPersonThrowingController : MonoBehaviour
 {
@@ -13,7 +15,8 @@ public class ThirdPersonThrowingController : MonoBehaviour
     [SerializeField] private float aimSensitivity;
 
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] private Transform debugTransform;
+    [SerializeField] private Transform pfBone;
+    [SerializeField] private Transform spawnBonePosition;
     private ThirdPersonController _thirdPersonController;
     private StarterAssetsInputs _starterAssetsInputs;
 
@@ -49,6 +52,14 @@ public class ThirdPersonThrowingController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(false);
             _thirdPersonController.SetRotateOnMove(true);
             _thirdPersonController.SetSensitivity(normalSensitivity);
+        }
+
+        if (_starterAssetsInputs.shoot)
+        {
+            Vector3 aimDir = (mouseWorldPosition - spawnBonePosition.position).normalized;
+            Instantiate(pfBone, spawnBonePosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            
+            _starterAssetsInputs.shoot = false;
         }
     }
 }
