@@ -3003,7 +3003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485060, guid: d716c95cb53f9694ebe12f6b8dada7ca, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 485060, guid: d716c95cb53f9694ebe12f6b8dada7ca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6002,7 +6002,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1245915461
 PrefabInstance:
@@ -9858,6 +9858,10 @@ PrefabInstance:
     - target: {fileID: 142548, guid: 659981ab97d9bb64990767ef5f931f7c, type: 3}
       propertyPath: m_Name
       value: Character_Skeleton_Slave_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 142548, guid: 659981ab97d9bb64990767ef5f931f7c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 467240, guid: 659981ab97d9bb64990767ef5f931f7c, type: 3}
       propertyPath: m_RootOrder
