@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="" />
+    <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Bone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Bone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/BoneProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/BoneProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/ThirdPersonThrowingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/ThirdPersonThrowingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_PlayGround.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +90,7 @@
       <workItem from="1672827208614" duration="1686000" />
       <workItem from="1672830518434" duration="795000" />
       <workItem from="1672849431621" duration="1811000" />
+      <workItem from="1672920675958" duration="1359000" />
     </task>
     <servers />
   </component>

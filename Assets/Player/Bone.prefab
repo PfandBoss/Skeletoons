@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3593892830374590632}
   - component: {fileID: 8948787855441561150}
   - component: {fileID: 1597895551107489084}
-  - component: {fileID: 8028217567926484240}
+  - component: {fileID: 2731320322485942356}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -115,7 +115,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.172863, y: 0.8496041, z: 0.09491253}
   m_Center: {x: 0, y: 0.00000023841858, z: 0}
---- !u!114 &8028217567926484240
+--- !u!114 &2731320322485942356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,4 +127,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c23c0e74234a64040b865fc045ad1aa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 12, z: 12}

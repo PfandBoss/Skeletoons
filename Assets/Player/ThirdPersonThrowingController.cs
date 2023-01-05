@@ -11,15 +11,28 @@ using Object = UnityEngine.Object;
 public class ThirdPersonThrowingController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
-    [SerializeField] private float normalSensitivity;
-    [SerializeField] private float aimSensitivity;
-
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] private Transform pfBone;
     [SerializeField] private Transform spawnBonePosition;
+
+    public Transform attackPoint;
+    public GameObject objectToThrow;
+    
     private ThirdPersonController _thirdPersonController;
     private StarterAssetsInputs _starterAssetsInputs;
 
+
+    [Header("Settings")] 
+    public int totalThrows;
+    public float throwCooldown;
+    [SerializeField] private float normalSensitivity;
+    [SerializeField] private float aimSensitivity;
+
+    [Header("Throwing")] 
+    public float throwForce;
+    public float throwUpwardForce;
+
+
+    private bool readyToThrow = true;
 
     private void Awake()
     {
@@ -54,12 +67,25 @@ public class ThirdPersonThrowingController : MonoBehaviour
             _thirdPersonController.SetSensitivity(normalSensitivity);
         }
 
-        if (_starterAssetsInputs.shoot)
+        if (_starterAssetsInputs.shoot && readyToThrow && totalThrows > 0)
         {
             Vector3 aimDir = (mouseWorldPosition - spawnBonePosition.position).normalized;
-            Instantiate(pfBone, spawnBonePosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            readyToThrow = false;
+            Debug.Log(aimDir);
+            GameObject projectile = Instantiate(objectToThrow, attackPoint.position, Quaternion.Euler(aimDir));
+            Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
+
+            Vector3 forceToAdd = aimDir * throwForce + transform.up * (throwUpwardForce * ((aimDir.y - -0.5f) / (0.5f - -0.5f)));
             
+            projectileRigidbody.AddForce(forceToAdd,ForceMode.Impulse);
+            totalThrows--;
+            Invoke(nameof(ResetThrow),throwCooldown);
             _starterAssetsInputs.shoot = false;
         }
+    }
+
+    private void ResetThrow()
+    {
+        readyToThrow = true;
     }
 }
