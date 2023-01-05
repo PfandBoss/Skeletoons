@@ -5,8 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/Bone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Bone.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/BoneProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/BoneProjectile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/ThirdPersonThrowingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/ThirdPersonThrowingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_PlayGround.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,10 +67,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="18108">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="18108" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -90,7 +90,7 @@
       <workItem from="1672827208614" duration="1686000" />
       <workItem from="1672830518434" duration="795000" />
       <workItem from="1672849431621" duration="1811000" />
-      <workItem from="1672920675958" duration="1359000" />
+      <workItem from="1672920675958" duration="3299000" />
     </task>
     <servers />
   </component>
@@ -101,5 +101,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Player/BoneProjectile.cs</url>
+          <line>11</line>
+          <properties documentPath="C:\Users\otzin\Documents\Games\Skeletoons\Assets\Player\BoneProjectile.cs" initialLine="11" containingFunctionPresentation="method 'OnColliderEnter'">
+            <startOffsets>
+              <option value="242" />
+            </startOffsets>
+            <endOffsets>
+              <option value="243" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
