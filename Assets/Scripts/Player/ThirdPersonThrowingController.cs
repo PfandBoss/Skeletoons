@@ -13,6 +13,8 @@ public class ThirdPersonThrowingController : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera aimVirtualCamera;
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
     [SerializeField] private Transform spawnBonePosition;
+    private Animator _animator;
+    private bool _hasAnimator;
 
     public Transform attackPoint;
     public GameObject objectToThrow;
@@ -31,17 +33,24 @@ public class ThirdPersonThrowingController : MonoBehaviour
     public float throwForce;
     public float throwUpwardForce;
 
-
+    private int _animIDThrow;
     private bool readyToThrow = true;
 
     private void Awake()
     {
         _thirdPersonController = GetComponent<ThirdPersonController>();
         _starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        _hasAnimator = TryGetComponent(out _animator);
+    }
+
+    private void Start()
+    {
+        _animIDThrow = Animator.StringToHash("Throwing");
     }
 
     private void Update()
     {
+        _hasAnimator = TryGetComponent(out _animator);
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenterPoint = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
@@ -69,8 +78,13 @@ public class ThirdPersonThrowingController : MonoBehaviour
 
         if (_starterAssetsInputs.shoot && readyToThrow && totalThrows > 0)
         {
+            /*if (_hasAnimator)
+            {
+                _animator.SetBool(_animIDThrow, true);
+            }*/
             Vector3 aimDir = (mouseWorldPosition - spawnBonePosition.position).normalized;
             readyToThrow = false;
+            
             Debug.Log(aimDir);
             GameObject projectile = Instantiate(objectToThrow, attackPoint.position, Quaternion.Euler(aimDir));
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
@@ -81,6 +95,10 @@ public class ThirdPersonThrowingController : MonoBehaviour
             totalThrows--;
             Invoke(nameof(ResetThrow),throwCooldown);
             _starterAssetsInputs.shoot = false;
+        }
+        else
+        {
+            //_animator.SetBool(_animIDThrow, false);
         }
     }
 

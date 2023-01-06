@@ -92,11 +92,13 @@ namespace StarterAssets
         // timeout deltatime
         private float _jumpTimeoutDelta;
         private float _fallTimeoutDelta;
+        
 
         // animation IDs
         private int _animIDSpeed;
         private int _animIDGrounded;
         private int _animIDJump;
+        
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
@@ -178,6 +180,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            
         }
 
         private void GroundedCheck()
