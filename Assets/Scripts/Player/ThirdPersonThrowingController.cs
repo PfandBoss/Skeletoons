@@ -71,7 +71,6 @@ public class ThirdPersonThrowingController : MonoBehaviour
         {
             Vector3 aimDir = (mouseWorldPosition - spawnBonePosition.position).normalized;
             readyToThrow = false;
-            Debug.Log(aimDir);
             GameObject projectile = Instantiate(objectToThrow, attackPoint.position, Quaternion.Euler(aimDir));
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
 

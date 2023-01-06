@@ -45,20 +45,24 @@ public class EnemyAI : MonoBehaviour
         }
         
         //Do here maybe something when _seePlayer true
+        if(_seePlayer)
+            Debug.Log("I SEE U BITCH");
     }
 
     private void Scouter()
     {
-        StartCoroutine(Scout());
         _scouting = true;
-        Transform nextEnd = path[0];
-        path.Remove(nextEnd);
         if (!_boning)
+        {
+            Transform nextEnd = path[0];
+            path.Remove(nextEnd);
             path.Add(nextEnd);
+        }
         else
             _boning = false;
         _navMesh.destination = path[0].position;
         _navMesh.isStopped = true;
+        StartCoroutine(Scout());
     }
     
     
@@ -130,6 +134,10 @@ public class EnemyAI : MonoBehaviour
 
     public void Distract(GameObject bone)
     {
+        StopAllCoroutines();
+        _scouting = false;
+        _navMesh.isStopped = false;
+        StartCoroutine(Scan());
         _navMesh.destination = bone.transform.position;
         _boning = true;
     }
