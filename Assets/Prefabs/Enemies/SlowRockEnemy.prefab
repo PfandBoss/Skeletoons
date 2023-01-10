@@ -108,6 +108,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
     - target: {fileID: 1950089731, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: m_Height
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950089731, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
       propertyPath: m_BaseOffset
       value: -0.05
       objectReference: {fileID: 0}
