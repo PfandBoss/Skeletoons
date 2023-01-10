@@ -23999,6 +23999,11 @@ PrefabInstance:
       objectReference: {fileID: 1555226943}
     - target: {fileID: 5016385791373952624, guid: 2d353a5bd27fbe748ba7f3e56f46f426,
         type: 3}
+      propertyPath: animationSpeed
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016385791373952624, guid: 2d353a5bd27fbe748ba7f3e56f46f426,
+        type: 3}
       propertyPath: path.Array.data[0]
       value: 
       objectReference: {fileID: 1074508482}

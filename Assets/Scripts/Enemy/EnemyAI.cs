@@ -27,6 +27,7 @@ public class EnemyAI : MonoBehaviour
     private int _animIDMotionSpeed;
     private Animator _animator;
     private bool _hasAnimator;
+    [SerializeField] private float animationSpeed;
     
     private NavMeshAgent _navMesh;
 
@@ -63,7 +64,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Animate()
     {
-        _animationBlend = Mathf.Lerp(_animationBlend, _navMesh.velocity.magnitude * 1.71f, Time.deltaTime * 10f);
+        _animationBlend = Mathf.Lerp(_animationBlend, _navMesh.velocity.magnitude * animationSpeed, Time.deltaTime * 10f);
         if (_animationBlend < 0.01f) _animationBlend = 0f;
         if (_hasAnimator)
         {
@@ -171,7 +172,7 @@ public class EnemyAI : MonoBehaviour
             if (FootstepAudioClips.Length > 0)
             {
                 var index = Random.Range(0, FootstepAudioClips.Length);
-                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(transform.position),
+                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.position,
                     FootstepAudioVolume * 2f);
             }
         }
