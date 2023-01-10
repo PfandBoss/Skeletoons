@@ -19,6 +19,13 @@ public class EnemyAI : MonoBehaviour
     private GameObject _player;
     private bool _seePlayer = false;
     
+    
+    private float _animationBlend;
+    private int _animIDSpeed;
+    private int _animIDMotionSpeed;
+    private Animator _animator;
+    private bool _hasAnimator;
+    
     private NavMeshAgent _navMesh;
 
     private bool _scouting = false;
@@ -28,12 +35,15 @@ public class EnemyAI : MonoBehaviour
     {
         _navMesh = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _hasAnimator = TryGetComponent(out _animator);
     }
 
     private void Start()
     {
         StartCoroutine(Scan());
         _navMesh.destination = path[0].position;
+        _animIDSpeed = Animator.StringToHash("Speed");
+        _animIDSpeed = Animator.StringToHash("Speed");
     }
 
     // Update is called once per frame
@@ -47,6 +57,14 @@ public class EnemyAI : MonoBehaviour
         //Do here maybe something when _seePlayer true
         if(_seePlayer)
             Debug.Log("I SEE U BITCH");
+
+        Debug.Log(_navMesh.velocity.magnitude);
+        _animationBlend = Mathf.Lerp(_animationBlend, _navMesh.velocity.magnitude * 2, Time.deltaTime * 10f);
+        if (_animationBlend < 0.01f) _animationBlend = 0f;
+        if (_hasAnimator)
+        {
+            _animator.SetFloat(_animIDSpeed, _animationBlend);
+        }
     }
 
     private void Scouter()
