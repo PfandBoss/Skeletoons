@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
+using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
 { 
@@ -18,7 +19,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private LayerMask obstacles;
     private GameObject _player;
     private bool _seePlayer = false;
-    
+    [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
+    public AudioClip[] FootstepAudioClips;
     
     private float _animationBlend;
     private int _animIDSpeed;
@@ -40,10 +42,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        _animIDSpeed = Animator.StringToHash("Speed");
         StartCoroutine(Scan());
         _navMesh.destination = path[0].position;
-        _animIDSpeed = Animator.StringToHash("Speed");
-        _animIDSpeed = Animator.StringToHash("Speed");
     }
 
     // Update is called once per frame
@@ -57,9 +58,12 @@ public class EnemyAI : MonoBehaviour
         //Do here maybe something when _seePlayer true
         if(_seePlayer)
             Debug.Log("I SEE U BITCH");
+        Animate();
+    }
 
-        Debug.Log(_navMesh.velocity.magnitude);
-        _animationBlend = Mathf.Lerp(_animationBlend, _navMesh.velocity.magnitude * 2, Time.deltaTime * 10f);
+    private void Animate()
+    {
+        _animationBlend = Mathf.Lerp(_animationBlend, _navMesh.velocity.magnitude * 1.71f, Time.deltaTime * 10f);
         if (_animationBlend < 0.01f) _animationBlend = 0f;
         if (_hasAnimator)
         {
@@ -158,6 +162,19 @@ public class EnemyAI : MonoBehaviour
         StartCoroutine(Scan());
         _navMesh.destination = bone.transform.position;
         _boning = true;
+    }
+    
+    private void OnFootstep(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.5f)
+        {
+            if (FootstepAudioClips.Length > 0)
+            {
+                var index = Random.Range(0, FootstepAudioClips.Length);
+                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(transform.position),
+                    FootstepAudioVolume * 2f);
+            }
+        }
     }
     
     

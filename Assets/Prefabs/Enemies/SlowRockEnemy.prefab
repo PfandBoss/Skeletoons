@@ -55,80 +55,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9588672, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
-      propertyPath: m_Controller
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[0]
       value: 
-      objectReference: {fileID: 9100000, guid: 6abc7332e76430149b39e69c155f9319, type: 2}
-    - target: {fileID: 9588672, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
-      propertyPath: m_WarningMessage
+      objectReference: {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[1]
       value: 
+      objectReference: {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
+    - target: {fileID: 1950089729, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: FootstepAudioClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+    - target: {fileID: 1950089731, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: m_BaseOffset
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1950089731, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10f9cee6cfdd7df43a5d805acd44763f, type: 3}
---- !u!1 &5016385792647848569 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 140808, guid: 10f9cee6cfdd7df43a5d805acd44763f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5016385792647709809}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &1950089730
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016385792647848569}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.1686387
-  m_Height: 1.8353138
-  m_Direction: 1
-  m_Center: {x: 0.000023841858, y: 0.890584, z: -0.013204098}
---- !u!114 &1950089729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016385792647848569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804aeb6866505754d890effbf0b327af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  senseRadius: 6
-  viewAngle: 130
-  target:
-    serializedVersion: 2
-    m_Bits: 64
-  obstacles:
-    serializedVersion: 2
-    m_Bits: 128
---- !u!195 &1950089731
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5016385792647848569}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1
-  m_Acceleration: 6
-  avoidancePriority: 50
-  m_AngularSpeed: 80
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

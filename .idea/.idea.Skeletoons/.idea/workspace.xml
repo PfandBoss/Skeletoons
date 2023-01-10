@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Characters/Character_Rock_Golem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Characters/Character_Rock_Golem.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/ThirdPersonController/Character/Animations/StarterAssetsThirdPerson.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SlowRockEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SlowRockEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +71,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12720">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="12720" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -95,7 +96,7 @@
       <workItem from="1672849431621" duration="1811000" />
       <workItem from="1672920675958" duration="3299000" />
       <workItem from="1673000108515" duration="1927000" />
-      <workItem from="1673341743246" duration="316000" />
+      <workItem from="1673341743246" duration="2922000" />
     </task>
     <servers />
   </component>
@@ -115,19 +116,6 @@
           <line>11</line>
           <properties documentPath="C:\Users\otzin\Documents\Games\Skeletoons\Assets\Player\BoneProjectile.cs" initialLine="11" containingFunctionPresentation="method 'OnColliderEnter'" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Player/ThirdPersonThrowingController.cs</url>
-          <line>80</line>
-          <properties documentPath="C:\Users\otzin\Documents\Games\Skeletoons\Assets\Scripts\Player\ThirdPersonThrowingController.cs" initialLine="80" containingFunctionPresentation="method 'Update'">
-            <startOffsets>
-              <option value="2743" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2760" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
