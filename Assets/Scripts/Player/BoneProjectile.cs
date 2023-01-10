@@ -11,7 +11,7 @@ public class BoneProjectile : MonoBehaviour
    [SerializeField] private float baitRadius = 7f;
    private void OnTriggerEnter(Collider other)
    {
-      Debug.Log("IM Checking");
+      //Debug.Log("IM Checking");
       Collider[] hitColliders = Physics.OverlapSphere(transform.position, baitRadius);
       foreach (var hitCollider in hitColliders)
       {
