@@ -9,11 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 102810, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
       propertyPath: m_Name
-      value: Character_Tormented_Soul
+      value: FastGhostSkeletonEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 475524, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475524, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475524, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 475524, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 475524, guid: b0297681c8568974da8dc86f4cdc853c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,7 +106,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  senseRadius: 5
+  senseRadius: 15
   viewAngle: 130
   target:
     serializedVersion: 2
@@ -102,6 +114,8 @@ MonoBehaviour:
   obstacles:
     serializedVersion: 2
     m_Bits: 128
+  FootstepAudioVolume: 0.5
+  FootstepAudioClips: []
 --- !u!195 &387448307
 NavMeshAgent:
   m_ObjectHideFlags: 0
