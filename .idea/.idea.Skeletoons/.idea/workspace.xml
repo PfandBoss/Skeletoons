@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Alternatives/Dungeon_Material_01_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Alternatives/Dungeon_Material_01_A.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Misc/Dungeon_Material_Transparent.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Misc/Dungeon_Material_Transparent.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Dungeon_Material_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Materials/Dungeon_Material_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Gym.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Gym.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/BoneProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/BoneProjectile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
@@ -16,6 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/60dfa7f0f0ea4433a6899568b622c56ffe00/8a/6c48728a/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2118e7c6674980875dd898708570ac26e00/12/0c0705f3/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
@@ -98,6 +101,8 @@
       <workItem from="1672920675958" duration="3299000" />
       <workItem from="1673000108515" duration="1927000" />
       <workItem from="1673341743246" duration="4201000" />
+      <workItem from="1673359812800" duration="801000" />
+      <workItem from="1673446330627" duration="788000" />
     </task>
     <servers />
   </component>

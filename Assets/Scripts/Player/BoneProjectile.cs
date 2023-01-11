@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using Quaternion = System.Numerics.Quaternion;
+using Random = UnityEngine.Random;
 
 public class BoneProjectile : MonoBehaviour
 {
@@ -38,5 +39,13 @@ public class BoneProjectile : MonoBehaviour
          Handles.color = Color.yellow;
          Handles.DrawWireArc(bone.transform.position, Vector3.up, Vector3.forward, 360, bone.baitRadius);
       }
+   }
+
+   private void Awake()
+   {
+      // Set a random rotation, because why not
+      Vector3 randomRotation = new Vector3(Random.Range(5f, 7f), 0, Random.Range(5f, 7f));
+      // Apply the rotation to the rigid body
+      GetComponent<Rigidbody>().AddRelativeTorque(randomRotation, ForceMode.Impulse);
    }
 }

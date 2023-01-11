@@ -140,8 +140,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4286285220983279047}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4100001, y: 22.565, z: -12.469999}
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -16.669998, y: 2.375, z: -32.16001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1023,11 +1023,11 @@ MonoBehaviour:
   attackPoint: {fileID: 5141803997756795864}
   objectToThrow: {fileID: 3593892830376698788, guid: 4c2474d1a1ddab948a0de16aef7246df,
     type: 3}
-  totalThrows: 122
-  throwCooldown: 1
+  totalThrows: 200
+  throwCooldown: 4.5
   normalSensitivity: 1
   aimSensitivity: 0.5
-  throwForce: 5
+  throwForce: 5.5
   throwUpwardForce: 7
 --- !u!1001 &5141803996895250657
 PrefabInstance:
