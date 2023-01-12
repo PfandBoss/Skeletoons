@@ -47,8 +47,9 @@ public class DemoRiddle : MonoBehaviour
     private IEnumerator Solved()
     {
         fire.Play();
-        fading.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(5f);
+        fading.GetComponent<Animator>().SetTrigger("FadeOut");
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

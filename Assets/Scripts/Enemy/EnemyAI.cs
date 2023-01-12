@@ -37,7 +37,6 @@ public class EnemyAI : MonoBehaviour
     private bool _scouting = false;
     private bool _boning = false;
 
-    private bool _found = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -68,7 +67,6 @@ public class EnemyAI : MonoBehaviour
             _scouting = false;
             _navMesh.isStopped = false;
             _navMesh.destination = _player.transform.position;
-            _found = true;
             _navMesh.speed = 4.5f;
             animationSpeed = 1.5f;
             _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.75f;
@@ -101,7 +99,7 @@ public class EnemyAI : MonoBehaviour
     private void Scouter()
     {
         _scouting = true;
-        if (!_boning && _found)
+        if (!_boning)
         {
             Transform nextEnd = path[0];
             path.Remove(nextEnd);
