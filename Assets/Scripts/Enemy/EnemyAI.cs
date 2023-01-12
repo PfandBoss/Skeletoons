@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
@@ -28,11 +30,14 @@ public class EnemyAI : MonoBehaviour
     private Animator _animator;
     private bool _hasAnimator;
     [SerializeField] private float animationSpeed;
+    [SerializeField] private Animator fading;
     
     private NavMeshAgent _navMesh;
 
     private bool _scouting = false;
     private bool _boning = false;
+
+    private bool _found = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,9 +62,30 @@ public class EnemyAI : MonoBehaviour
         }
         
         //Do here maybe something when _seePlayer true
-        if(_seePlayer)
-            Debug.Log("I SEE U BITCH");
+        if (_seePlayer)
+        {
+            StopAllCoroutines();
+            _scouting = false;
+            _navMesh.isStopped = false;
+            _navMesh.destination = _player.transform.position;
+            _found = true;
+            _navMesh.speed = 4.5f;
+            animationSpeed = 1.5f;
+            _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.75f;
+            _player.GetComponentInParent<ThirdPersonController>().SprintSpeed = 1.2f;
+            float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+            if (distanceToPlayer <= 1f)
+            {
+                fading.GetComponent<Animator>().SetTrigger("FadeOut");
+                Invoke("Restart",1.0f);
+            }
+        }
         Animate();
+    }
+
+    private  void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Animate()
@@ -75,7 +101,7 @@ public class EnemyAI : MonoBehaviour
     private void Scouter()
     {
         _scouting = true;
-        if (!_boning)
+        if (!_boning && _found)
         {
             Transform nextEnd = path[0];
             path.Remove(nextEnd);

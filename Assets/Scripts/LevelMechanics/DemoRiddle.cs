@@ -11,6 +11,7 @@ public class DemoRiddle : MonoBehaviour
 
     [SerializeField] SteppablePlatform[] platforms;
     [SerializeField] ParticleSystem fire;
+    [SerializeField] private Animator fading;
 
     private string _currentOrder;
     private bool _solved;
@@ -46,6 +47,7 @@ public class DemoRiddle : MonoBehaviour
     private IEnumerator Solved()
     {
         fire.Play();
+        fading.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
