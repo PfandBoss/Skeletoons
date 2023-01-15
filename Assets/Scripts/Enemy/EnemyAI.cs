@@ -5,6 +5,7 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEditor;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -63,20 +64,7 @@ public class EnemyAI : MonoBehaviour
         //Do here maybe something when _seePlayer true
         if (_seePlayer)
         {
-            StopAllCoroutines();
-            _scouting = false;
-            _navMesh.isStopped = false;
-            _navMesh.destination = _player.transform.position;
-            _navMesh.speed = 4.5f;
-            animationSpeed = 1.5f;
-            _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.75f;
-            _player.GetComponentInParent<ThirdPersonController>().SprintSpeed = 1.2f;
-            float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
-            if (distanceToPlayer <= 1f)
-            {
-                fading.GetComponent<Animator>().SetTrigger("FadeOut");
-                Invoke("Restart",1.0f);
-            }
+            CatchPlayer();
         }
         Animate();
     }
@@ -131,6 +119,8 @@ public class EnemyAI : MonoBehaviour
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
                 _seePlayer = !Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacles);
+                if (_seePlayer)
+                    ChasePlayer();
             }
             else
                 _seePlayer = false;
@@ -139,8 +129,32 @@ public class EnemyAI : MonoBehaviour
         else if (_seePlayer)
             _seePlayer = false;
     }
+
+
+    private void ChasePlayer()
+    {
+        StopAllCoroutines();
+        _scouting = false;
+        _navMesh.isStopped = false;
+        _navMesh.destination = _player.transform.position;
+        _navMesh.speed = 4.5f;
+        animationSpeed = 1.5f;
+        _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.75f;
+        _player.GetComponentInParent<ThirdPersonController>().SprintSpeed = 1.2f;
+    }
+
     
-    
+    private void CatchPlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
+        if (distanceToPlayer <= 1f)
+        {
+            fading.GetComponent<Animator>().SetTrigger("FadeOut");
+            Invoke("Restart",1.0f);
+        }
+    }
+
+
     private IEnumerator Scout()
     {
         yield return new WaitForSeconds(.5f);
@@ -181,6 +195,9 @@ public class EnemyAI : MonoBehaviour
 
     public void Distract(GameObject bone)
     {
+        if(_seePlayer)
+            return;
+        
         StopAllCoroutines();
         _scouting = false;
         _navMesh.isStopped = false;
