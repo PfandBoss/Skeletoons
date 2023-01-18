@@ -56,16 +56,17 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, _navMesh.destination) < 1.5f && !_scouting)
-        {
-            Scouter();
-        }
-        
-        //Do here maybe something when _seePlayer true
         if (_seePlayer)
         {
             CatchPlayer();
         }
+        
+        else if (Vector3.Distance(transform.position, _navMesh.destination) < 1.5f && !_scouting)
+        {
+            Scouter();
+        }
+        
+
         Animate();
     }
 
@@ -146,6 +147,7 @@ public class EnemyAI : MonoBehaviour
     
     private void CatchPlayer()
     {
+        _navMesh.destination = _player.transform.position;
         float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
         if (distanceToPlayer <= 1f)
         {
