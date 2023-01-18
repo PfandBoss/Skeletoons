@@ -29,7 +29,15 @@ public class Item : MonoBehaviour
         PickUp();
     }
 
-    public void PickUp()
+    public void Interact()
+    {
+        if (!_holding)
+        {
+            PickUp();
+        }
+    }
+
+    private void PickUp()
     {
         _holding = true;
         ItemController.HoldingItem = true;
@@ -56,5 +64,10 @@ public class Item : MonoBehaviour
         _rb.AddForce(Vector3.down * dropDownForce, ForceMode.Impulse);
         float random = Random.Range(-1f, 1f);
         _rb.AddTorque(new Vector3(random, random, random) * 10);
+    }
+
+    public bool GetHolding()
+    {
+        return _holding;
     }
 }

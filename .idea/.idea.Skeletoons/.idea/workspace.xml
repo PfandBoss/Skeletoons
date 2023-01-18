@@ -2,39 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/DoorOpening.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/DoorOpening.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candle_01_Preset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candle_01_Preset.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_01_Preset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_01_Preset.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_02_Preset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_02_Preset.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_03_Preset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_03_Preset.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_04_Preset.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/PolygonDungeon/Prefabs/Props/Preset/SM_Prop_Candles_04_Preset.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SlowRockEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/SlowRockEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" />
+    </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Jp1XMV4H1DFhYn80g0vDtO4bHO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -60,7 +82,6 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -70,7 +91,6 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
@@ -100,6 +120,10 @@
       <workItem from="1673515850515" duration="1713000" />
       <workItem from="1673561790605" duration="759000" />
       <workItem from="1673717901343" duration="1028000" />
+      <workItem from="1673883160181" duration="753000" />
+      <workItem from="1673885392368" duration="1469000" />
+      <workItem from="1673980388145" duration="2623000" />
+      <workItem from="1674029427979" duration="6321000" />
     </task>
     <servers />
   </component>
@@ -109,7 +133,20 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="XDebuggerManager">
