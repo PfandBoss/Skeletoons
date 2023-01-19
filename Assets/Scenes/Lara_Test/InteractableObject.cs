@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class InteractableObject : MonoBehaviour
 
     public InteractableType type;
 
-    public void Interact()
+    public void Interact(GameObject player)
     {
         Debug.Log("Interact");
         switch (type)
@@ -22,6 +23,7 @@ public class InteractableObject : MonoBehaviour
                 gameObject.GetComponent<Door>().Interact();
                 break;
             case InteractableType.Locker:
+                gameObject.GetComponent<Locker>().Interact(player);
                 break;
             case InteractableType.Item:
                 gameObject.GetComponent<Item>().Interact();

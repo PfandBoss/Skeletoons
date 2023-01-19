@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/DoorOpening.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/DoorOpening.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -27,6 +19,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" root0="FORCE_HIGHLIGHTING" />
@@ -35,10 +35,11 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -124,6 +125,9 @@
       <workItem from="1673885392368" duration="1469000" />
       <workItem from="1673980388145" duration="2623000" />
       <workItem from="1674029427979" duration="6321000" />
+      <workItem from="1674044837834" duration="1267000" />
+      <workItem from="1674066092942" duration="3539000" />
+      <workItem from="1674111887931" duration="3953000" />
     </task>
     <servers />
   </component>

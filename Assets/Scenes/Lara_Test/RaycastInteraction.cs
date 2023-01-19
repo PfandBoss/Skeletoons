@@ -28,7 +28,7 @@ public class RaycastInteraction : MonoBehaviour
                 {
                     _raycastObject = hit.collider.gameObject;
                     Debug.Log("Raycast hit: " + _raycastObject.name);
-                    _raycastObject.GetComponent<InteractableObject>().Interact();
+                    _raycastObject.GetComponent<InteractableObject>().Interact(gameObject);
                 }
             }
         }

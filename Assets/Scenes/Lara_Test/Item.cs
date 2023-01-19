@@ -11,9 +11,15 @@ public class Item : MonoBehaviour
     private bool _holding;
     private Rigidbody _rb;
     private BoxCollider _collider;
+    private Vector3 _itemScale;
 
     [SerializeField] private float dropDownForce = 1.0f;
+    [SerializeField] private bool scaleDown = true;
+    [SerializeField] private Vector3 scale = Vector3.one;
     public Transform itemContainer;
+    
+    // stand in
+    private KeyCode dropKey = KeyCode.E;
     
     // Start is called before the first frame update
     void Start()
@@ -22,11 +28,12 @@ public class Item : MonoBehaviour
         _collider = gameObject.GetComponent<BoxCollider>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        Debug.Log("Collision Detected: " + collision.gameObject.name);
-        if (!collision.gameObject.CompareTag("Player")) return;
-        PickUp();
+        if (_holding && Input.GetKeyDown(dropKey))
+        {
+            DropDown();
+        }
     }
 
     public void Interact()
@@ -42,13 +49,17 @@ public class Item : MonoBehaviour
         _holding = true;
         ItemController.HoldingItem = true;
         ItemController.HeldItem = gameObject;
+        _itemScale = transform.localScale;
         
         _rb.isKinematic = true;
         
         transform.SetParent(itemContainer);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
-        transform.localScale = Vector3.one;
+        if (scaleDown)
+        {
+            transform.localScale = scale;
+        }
     }
 
     public void DropDown()
@@ -60,6 +71,7 @@ public class Item : MonoBehaviour
         transform.SetParent(null);
 
         _rb.isKinematic = false;
+        transform.localScale = _itemScale;
 
         _rb.AddForce(Vector3.down * dropDownForce, ForceMode.Impulse);
         float random = Random.Range(-1f, 1f);
