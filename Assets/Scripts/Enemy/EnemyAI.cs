@@ -12,6 +12,7 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 { 
     [Header("Navigation")]
+    [SerializeField] private WaypointCreator waypointCreator;
     [SerializeField] private List<Transform> path;
 
     [Space(10)] [Header("Enemy Vision")] 
@@ -104,32 +105,22 @@ public class EnemyAI : MonoBehaviour
     
     private void Scanner()
     {
-        //Get everything inRange of radius if it is a target
+        if (_seePlayer) return;
         Collider[] inRange = Physics.OverlapSphere(transform.position, senseRadius, target);
-
-        //if target inRange check for obstacles in way (There can only be 1 target)
         if (inRange.Length != 0)
         {
-            //Get Dir to target
             Transform player = inRange[0].transform;
             Vector3 directionToPlayer = (player.position - transform.position).normalized;
-
-            //Check if it is in our viewing angel
             if (Vector3.Angle(transform.forward, directionToPlayer) < viewAngle / 2)
             {
                 float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
                 _seePlayer = !Physics.Raycast(transform.position, directionToPlayer, distanceToPlayer, obstacles);
                 if (_seePlayer)
                     ChasePlayer();
             }
-            else
-                _seePlayer = false;
         }
-        //Reset
-        else if (_seePlayer)
-            _seePlayer = false;
     }
+
 
 
     private void ChasePlayer()
@@ -148,12 +139,17 @@ public class EnemyAI : MonoBehaviour
     private void CatchPlayer()
     {
         _navMesh.destination = _player.transform.position;
-        float distanceToPlayer = Vector3.Distance(transform.position, _player.transform.position);
-        if (distanceToPlayer <= 1f)
+        if (Vector3.Distance(transform.position, _player.transform.position) <= 1f)
         {
             fading.GetComponent<Animator>().SetTrigger("FadeOut");
-            Invoke("Restart",1.0f);
+            StartCoroutine(RestartAfterDelay());
         }
+    }
+
+    private IEnumerator RestartAfterDelay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Restart();
     }
 
 
