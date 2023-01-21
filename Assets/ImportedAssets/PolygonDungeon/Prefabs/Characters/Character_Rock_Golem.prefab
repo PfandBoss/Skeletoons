@@ -1840,6 +1840,7 @@ GameObject:
   - component: {fileID: 471940}
   - component: {fileID: 9588672}
   - component: {fileID: 1950089730}
+  - component: {fileID: 4020866767864590775}
   - component: {fileID: 1950089729}
   - component: {fileID: 1950089731}
   m_Layer: 0
@@ -1915,6 +1916,19 @@ CapsuleCollider:
   m_Height: 1.8353138
   m_Direction: 1
   m_Center: {x: 0.000023841858, y: 0.890584, z: -0.013204098}
+--- !u!114 &4020866767864590775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 574efe9dd6605aa4db72e6ce279a818b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
 --- !u!114 &1950089729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,11 +1941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804aeb6866505754d890effbf0b327af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   senseRadius: 8
   viewAngle: 130
   target:
@@ -1953,6 +1962,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   animationSpeed: 1.71
+  fading: {fileID: 0}
 --- !u!195 &1950089731
 NavMeshAgent:
   m_ObjectHideFlags: 0

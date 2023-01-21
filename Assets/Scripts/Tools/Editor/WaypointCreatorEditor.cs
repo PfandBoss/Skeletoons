@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [CustomEditor(typeof(WaypointCreator))]
 public class WaypointCreatorEditor : Editor
 {
     private bool _isMousePressed;
+    private bool _isCreating = false;
     private GameObject _lastWaypoint;
     private GameObject _lastSelected;
 
@@ -13,10 +15,14 @@ public class WaypointCreatorEditor : Editor
     {
         WaypointCreator waypointCreator = (WaypointCreator) target;
 
+        _isCreating = EditorGUILayout.Toggle("Create Waypoints: ", _isCreating);
+
+        if (!_isCreating) return;
+        
         if (GUILayout.Button("Add Waypoint"))
         {
             GameObject waypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.Count + 1));
-            waypointCreator.waypoints.Add(waypoint);
+            waypointCreator.waypoints.Add(waypoint.transform);
             EditorUtility.SetDirty(waypointCreator);
         }
 
@@ -26,7 +32,7 @@ public class WaypointCreatorEditor : Editor
             {
                 if (_lastWaypoint != null)
                 {
-                    waypointCreator.waypoints.Remove(_lastWaypoint);
+                    waypointCreator.waypoints.Remove(_lastWaypoint.transform);
                     DestroyImmediate(_lastWaypoint);
                     _lastWaypoint = null;
                     EditorUtility.SetDirty(this);
@@ -36,14 +42,15 @@ public class WaypointCreatorEditor : Editor
 
         for (int i = 0; i < waypointCreator.waypoints.Count; i++)
         {
-            waypointCreator.waypoints[i] = (GameObject) EditorGUILayout.ObjectField("Waypoint " + (i + 1),
-                waypointCreator.waypoints[i], typeof(GameObject), true);
+            waypointCreator.waypoints[i] = (Transform) EditorGUILayout.ObjectField("Waypoint " + (i + 1),
+                waypointCreator.waypoints[i], typeof(GameObject), true).GetComponent<Transform>();
         }
     }
 
 
     private void OnSceneGUI()
     {
+        if (!_isCreating) return;
         Event e = Event.current;
         WaypointCreator waypointCreator = (WaypointCreator)target;
 
@@ -57,7 +64,7 @@ public class WaypointCreatorEditor : Editor
             {
                 _lastWaypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.Count + 1));
                 _lastWaypoint.transform.position = hit.point;
-                waypointCreator.waypoints.Add(_lastWaypoint);
+                waypointCreator.waypoints.Add(_lastWaypoint.transform);
                 EditorUtility.SetDirty(waypointCreator);
             }
         }
@@ -67,7 +74,7 @@ public class WaypointCreatorEditor : Editor
             if (waypointCreator.waypoints[i] != null)
             {
                 Handles.color = Color.red;
-                _lastWaypoint = waypointCreator.waypoints[i];
+                _lastWaypoint = waypointCreator.waypoints[i].gameObject;
                 _lastWaypoint.transform.position = Handles.FreeMoveHandle(_lastWaypoint.transform.position, Quaternion.identity, 0.3f, Vector3.zero, Handles.SphereHandleCap);
 
                 if (i > 0)

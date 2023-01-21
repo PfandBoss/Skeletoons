@@ -12,8 +12,8 @@ using Random = UnityEngine.Random;
 public class EnemyAI : MonoBehaviour
 { 
     [Header("Navigation")]
-    [SerializeField] private WaypointCreator waypointCreator;
-    [SerializeField] private List<Transform> path;
+    private WaypointCreator _waypointCreator;
+    private List<Transform> path;
 
     [Space(10)] [Header("Enemy Vision")] 
     [SerializeField] private float senseRadius;
@@ -45,12 +45,14 @@ public class EnemyAI : MonoBehaviour
         _navMesh = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player");
         _hasAnimator = TryGetComponent(out _animator);
+        _waypointCreator = GetComponent<WaypointCreator>();
     }
 
     private void Start()
     {
         _animIDSpeed = Animator.StringToHash("Speed");
         StartCoroutine(Scan());
+        path = _waypointCreator.waypoints;
         _navMesh.destination = path[0].position;
     }
 

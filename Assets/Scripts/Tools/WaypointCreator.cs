@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class WaypointCreator : MonoBehaviour
 {
-    public List<GameObject> waypoints = new List<GameObject>();
+    public List<Transform> waypoints = new List<Transform>();
     
 
     private void OnDrawGizmos()
@@ -13,12 +13,12 @@ public class WaypointCreator : MonoBehaviour
             if (waypoints[i] != null)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawSphere(waypoints[i].transform.position, 0.3f);
+                Gizmos.DrawSphere(waypoints[i].position, 0.3f);
 
                 if (i > 0)
                 {
                     Gizmos.color = Color.green;
-                    Gizmos.DrawLine(waypoints[i - 1].transform.position, waypoints[i].transform.position);
+                    Gizmos.DrawLine(waypoints[i - 1].transform.position, waypoints[i].position);
                 }
             }
         }
