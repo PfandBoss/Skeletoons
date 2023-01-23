@@ -88,6 +88,10 @@ namespace StarterAssets
         private float _rotationVelocity;
         private float _verticalVelocity;
         private float _terminalVelocity = 53.0f;
+        
+        // interaction
+        private bool _canInteract = false;
+        private Interactable _interactable;
 
         // timeout deltatime
         private float _jumpTimeoutDelta;
@@ -166,6 +170,14 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (_canInteract)
+                {
+                    _interactable.Interact();
+                }
+            }
         }
 
         private void LateUpdate()
@@ -415,6 +427,12 @@ namespace StarterAssets
         public void SetRotateOnMove(bool newRotateOnMove)
         {
             _rotateOnMove = newRotateOnMove;
+        }
+
+        public void SetInteractable(Interactable interactable)
+        {
+            _canInteract = true;
+            _interactable = interactable;
         }
     }
 }
