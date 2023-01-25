@@ -15,6 +15,8 @@ namespace StarterAssets
 		public bool aim;
 		public bool sneek;
 		public bool shoot;
+		public bool interact;
+		public Vector2 puzzleMove;
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -57,6 +59,20 @@ namespace StarterAssets
 		{
 			SneekInput(value.isPressed);
 		}
+
+		public void OnInteract(InputValue value)
+		{
+			// InteractInput(value.isPressed);
+		}
+		
+		public void OnPuzzleNavigateUpDown(InputValue value)
+		{
+			PuzzleNavigateInput(0, value.Get<float>());
+		}
+		public void OnPuzzleNavigateLeftRight(InputValue value)
+		{
+			PuzzleNavigateInput(1, value.Get<float>());
+		}
 #endif
 
 
@@ -91,6 +107,16 @@ namespace StarterAssets
 		public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
+		}
+
+		// public void InteractInput(bool newInteractState)
+		// {
+		// 	interact = newInteractState;
+		// }
+
+		public void PuzzleNavigateInput(int dir, float value)
+		{
+			puzzleMove[dir] = value;
 		}
 
 		private void OnApplicationFocus(bool hasFocus)
