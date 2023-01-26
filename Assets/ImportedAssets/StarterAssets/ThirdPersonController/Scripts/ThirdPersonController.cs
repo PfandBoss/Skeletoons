@@ -90,7 +90,7 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
         
         // interaction
-        private bool _canInteract = false;
+        private bool _interacting = false;
         private Interactable _interactable;
 
         // timeout deltatime
@@ -170,14 +170,13 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Interact();
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (_canInteract)
-                {
-                    _interactable.Interact();
-                }
+                _interacting = !_interacting;
             }
+            
         }
 
         private void LateUpdate()
@@ -233,6 +232,7 @@ namespace StarterAssets
 
         private void Move()
         {
+            if (_interacting) return;
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -376,6 +376,27 @@ namespace StarterAssets
             }
         }
 
+        private void Interact()
+        {
+            if (!_interacting) return;
+            if (Input.GetKeyUp(KeyCode.A))
+            {
+                _interactable.Interact(KeyCode.A);
+            }
+            if (Input.GetKeyUp(KeyCode.D))
+            {
+                _interactable.Interact(KeyCode.D);
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                _interactable.Interact(KeyCode.W);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                _interactable.Interact(KeyCode.S);
+            }
+        }
+
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
@@ -431,7 +452,6 @@ namespace StarterAssets
 
         public void SetInteractable(Interactable interactable)
         {
-            _canInteract = true;
             _interactable = interactable;
         }
     }

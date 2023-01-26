@@ -235,6 +235,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096129244380211385, guid: cf3f57f8cf3d3cf4cb1f6e5ffc4d3295,
         type: 3}
+      propertyPath: aim
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5096129244380211385, guid: cf3f57f8cf3d3cf4cb1f6e5ffc4d3295,
+        type: 3}
       propertyPath: jump
       value: 0
       objectReference: {fileID: 0}
@@ -902,7 +907,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4968542448031169485, guid: 565cb6bf4fe29d446b616d1dfe658169, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 565cb6bf4fe29d446b616d1dfe658169, type: 3}
 --- !u!1 &1279343972
 GameObject:
