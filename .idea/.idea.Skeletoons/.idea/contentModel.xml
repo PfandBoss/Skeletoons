@@ -257,6 +257,7 @@
         <e p="Scenes" t="Include">
           <e p="Gym" t="Include" />
           <e p="Jonas_Level" t="Include" />
+          <e p="Lara_Level" t="Include" />
           <e p="Lara_Test" t="Include">
             <e p="Door.cs" t="Include" />
             <e p="InteractableObject.cs" t="Include" />
@@ -265,6 +266,7 @@
             <e p="Locker.cs" t="Include" />
             <e p="PositionSwitch.cs" t="Include" />
             <e p="RaycastInteraction.cs" t="Include" />
+            <e p="TestPrefabs" t="Include" />
           </e>
           <e p="Leon_Level" t="Include">
             <e p="Materials" t="Include" />
@@ -276,12 +278,21 @@
             <e p="EnemyAI.cs" t="Include" />
           </e>
           <e p="LevelMechanics" t="Include">
+            <e p="CombinationPuzzle.cs" t="Include" />
             <e p="DemoRiddle.cs" t="Include" />
+            <e p="Interactable.cs" t="Include" />
             <e p="SteppablePlatform.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="BoneProjectile.cs" t="Include" />
             <e p="ThirdPersonThrowingController.cs" t="Include" />
+          </e>
+          <e p="Tools" t="Include">
+            <e p="Editor" t="Include">
+              <e p="WallPlacerTool.cs" t="Include" />
+              <e p="WaypointCreatorEditor.cs" t="Include" />
+            </e>
+            <e p="WaypointCreator.cs" t="Include" />
           </e>
         </e>
         <e p="Settings" t="Include" />

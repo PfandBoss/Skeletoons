@@ -20,10 +20,12 @@ public class RaycastInteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(interactionKey))
         {
+            Debug.Log("Shooting Ray");
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
             if (Physics.Raycast(ray, out var hit, rayLength, interactionLayer))
             {
+                Debug.Log("Hit Obstacle");
                 if (hit.collider.CompareTag(_interactableTag))
                 {
                     _raycastObject = hit.collider.gameObject;
