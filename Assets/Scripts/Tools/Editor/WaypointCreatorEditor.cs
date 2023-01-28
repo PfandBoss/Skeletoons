@@ -13,77 +13,81 @@ public class WaypointCreatorEditor : Editor
 
     public override void OnInspectorGUI()
     {
+
+        DrawDefaultInspector();
+        
         WaypointCreator waypointCreator = (WaypointCreator) target;
 
         _isCreating = EditorGUILayout.Toggle("Create Waypoints: ", _isCreating);
 
+        // Only draw Waypoints when Toggle on
         if (!_isCreating) return;
         
+        // Let User Add (0,0,0) Waypoint via Button
         if (GUILayout.Button("Add Waypoint"))
         {
-            GameObject waypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.Count + 1));
-            waypointCreator.waypoints.Add(waypoint.transform);
+            GameObject waypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.waypoints.Count + 1));
+            waypointCreator.waypoints.waypoints.Add(waypoint.transform);
             EditorUtility.SetDirty(waypointCreator);
         }
 
+        //Remove last added Waypoint
         if (GUILayout.Button("Remove Waypoint"))
         {
-            if (waypointCreator.waypoints.Count > 0)
+            if (waypointCreator.waypoints.waypoints.Count > 0)
             {
                 if (_lastWaypoint != null)
                 {
-                    waypointCreator.waypoints.Remove(_lastWaypoint.transform);
+                    waypointCreator.waypoints.waypoints.RemoveAt(waypointCreator.waypoints.waypoints.Count-1);
                     DestroyImmediate(_lastWaypoint);
                     _lastWaypoint = null;
+                    for (int i = 0; i < waypointCreator.waypoints.waypoints.Count; i++)
+                    {
+                        waypointCreator.waypoints.waypoints[i].name = "Waypoint " + (i + 1);
+                    }
                     EditorUtility.SetDirty(this);
                 }
             }
         }
 
-        for (int i = 0; i < waypointCreator.waypoints.Count; i++)
+        // Put the created Game Objects in the path list
+        for (int i = 0; i < waypointCreator.waypoints.waypoints.Count; i++)
         {
-            waypointCreator.waypoints[i] = (Transform) EditorGUILayout.ObjectField("Waypoint " + (i + 1),
-                waypointCreator.waypoints[i], typeof(GameObject), true).GetComponent<Transform>();
+            waypointCreator.waypoints.waypoints[i] = (Transform) EditorGUILayout.ObjectField("Waypoint " + (i + 1),
+                waypointCreator.waypoints.waypoints[i], typeof(GameObject), true).GetComponent<Transform>();
         }
     }
 
 
     private void OnSceneGUI()
     {
+        //When Toggle off, we want to have the normal Scene View
         if (!_isCreating) return;
+        
         Event e = Event.current;
         WaypointCreator waypointCreator = (WaypointCreator)target;
 
+        // Check if User presses Mouse Down
         if (e.type == EventType.MouseDown && e.button == 0)
         {
             _lastSelected = Selection.activeGameObject;
             Ray ray = HandleUtility.GUIPointToWorldRay(e.mousePosition);
             RaycastHit hit;
 
+            //Get from mouseclick hitted Game Object
             if (Physics.Raycast(ray, out hit))
             {
-                _lastWaypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.Count + 1));
+                // Create Waypoint object and it to the list
+                _lastWaypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.waypoints.Count + 1));
                 _lastWaypoint.transform.position = hit.point;
-                waypointCreator.waypoints.Add(_lastWaypoint.transform);
+                waypointCreator.waypoints.waypoints.Add(_lastWaypoint.transform);
                 EditorUtility.SetDirty(waypointCreator);
             }
         }
 
-        for (int i = 0; i < waypointCreator.waypoints.Count; i++)
-        {
-            if (waypointCreator.waypoints[i] != null)
-            {
-                Handles.color = Color.red;
-                _lastWaypoint = waypointCreator.waypoints[i].gameObject;
-                _lastWaypoint.transform.position = Handles.FreeMoveHandle(_lastWaypoint.transform.position, Quaternion.identity, 0.3f, Vector3.zero, Handles.SphereHandleCap);
+        if(waypointCreator.waypoints.waypoints.Count > 0)
+            _lastWaypoint = waypointCreator.waypoints.waypoints[^1].gameObject;
 
-                if (i > 0)
-                {
-                    Handles.color = Color.green;
-                    Handles.DrawLine(waypointCreator.waypoints[i - 1].transform.position, waypointCreator.waypoints[i].transform.position);
-                }
-            }
-        }
         if (_lastSelected != null) Selection.activeGameObject = _lastSelected;
     }
 
