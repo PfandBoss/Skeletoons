@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Hinge.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Hinge.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Key.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Key.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Locker.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Locker.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Teleport.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/TestPrefabs/Teleport.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_PlayGround.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playground 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +23,10 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4746c126b0b54f3b834845974d1a9190159000/99/dcfb33b7/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5b1d4d7071a4b08a2c352e4980e4bc41a000/22/c6e87031/PhysicsScene.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e5b1d4d7071a4b08a2c352e4980e4bc41a000/db/823a41c5/Physics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fd2118e7c6674980875dd898708570ac26e00/12/0c0705f3/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -63,15 +51,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\otzin\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\otzin\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\otzin\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
@@ -143,6 +136,7 @@
       <workItem from="1674748601446" duration="4656000" />
       <workItem from="1674831632328" duration="3132000" />
       <workItem from="1674863233357" duration="2008000" />
+      <workItem from="1674988552410" duration="679000" />
     </task>
     <servers />
   </component>
@@ -162,7 +156,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
