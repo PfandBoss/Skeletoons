@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     {
         if (open) return;
         
-        if (key.GetComponent<Item>().GetHolding())
+        if (key == null | key.GetComponent<Item>().GetHolding())
         {
             OpenDoor();
         }
@@ -24,4 +24,5 @@ public class Door : MonoBehaviour
         open = true;
         gameObject.GetComponentInParent<Animation>().Play();
     }
+
 }

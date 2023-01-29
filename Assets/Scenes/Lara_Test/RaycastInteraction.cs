@@ -7,19 +7,25 @@ public class RaycastInteraction : MonoBehaviour
     // Raycast Variables
     [SerializeField] private int rayLength;
     [SerializeField] private LayerMask interactionLayer;
-    [SerializeField] private string blockingLayer;
-    
+
     private string _interactableTag = "Interactable";
     private GameObject _raycastObject;
     private InteractableObject _raycastInteractable;
+    
     // stand in
     public KeyCode interactionKey = KeyCode.Q;
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
         if (Input.GetKeyDown(interactionKey))
         {
+            if (Locker.isHiding())
+            {
+                _raycastObject.GetComponent<InteractableObject>().Interact(gameObject);
+                return;
+            }
+            
             Debug.Log("Shooting Ray");
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
