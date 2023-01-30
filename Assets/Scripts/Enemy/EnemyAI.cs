@@ -52,7 +52,7 @@ public class EnemyAI : MonoBehaviour
     {
         _animIDSpeed = Animator.StringToHash("Speed");
         StartCoroutine(Scan());
-        path = _waypointCreator.waypoints;
+        path = _waypointCreator.waypoints.waypoints;
         _navMesh.destination = path[0].position;
     }
 

@@ -243,7 +243,12 @@
         </e>
         <e p="Materials" t="Include" />
         <e p="Prefabs" t="Include">
-          <e p="Enemies" t="Include" />
+          <e p="Enemies" t="Include">
+            <e p="WaypointLists" t="Include">
+              <e p="Jonas - Dungeon" t="Include" />
+              <e p="Okay - Dach" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="ProjectInfo" t="Include">
           <e p="Icons" t="Include" />
@@ -293,6 +298,7 @@
               <e p="WaypointCreatorEditor.cs" t="Include" />
             </e>
             <e p="WaypointCreator.cs" t="Include" />
+            <e p="WaypointList.cs" t="Include" />
           </e>
         </e>
         <e p="Settings" t="Include" />
