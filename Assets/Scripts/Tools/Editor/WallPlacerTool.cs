@@ -1,4 +1,6 @@
 using System;
+using System.Globalization;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.EditorTools;
 using UnityEditor.UIElements;
@@ -12,8 +14,10 @@ public class WallPlacerTool : EditorTool
 
     private VisualElement _toolRootElement;
     private ObjectField _prefabObjectField;
+    private Slider _sliderField;
+    private Label _sliderValue;
 
-    static Plane s_GroundPlane = new(Vector3.up, Vector3.zero);
+    private static Plane _sGroundPlane = new(Vector3.up, Vector3.zero);
 
     private bool _receivedClickDownEvent;
     private bool _receivedClickUpEvent;
@@ -28,19 +32,19 @@ public class WallPlacerTool : EditorTool
     };
 
     [InitializeOnLoadMethod]
-    static void InitPlaceWallHandler()
+    private static void InitPlaceWallHandler()
     {
         HandleUtility.placeObjectCustomPasses += PlaneRaycast;
     }
 
-    static bool PlaneRaycast(Vector2 mousePosition, out Vector3 position, out Vector3 normal)
+    private static bool PlaneRaycast(Vector2 mousePosition, out Vector3 position, out Vector3 normal)
     {
         var worldRay = HandleUtility.GUIPointToWorldRay(mousePosition);
-        if (s_GroundPlane.Raycast(worldRay, out var distance))
+        if (_sGroundPlane.Raycast(worldRay, out var distance))
         {
             Debug.Log(distance);
             position = worldRay.GetPoint(distance);
-            normal = s_GroundPlane.normal;
+            normal = _sGroundPlane.normal;
             return true;
         }
 
@@ -75,11 +79,32 @@ public class WallPlacerTool : EditorTool
                 unityTextAlign = TextAnchor.UpperCenter
             }
         };
+        
+        var sliderLabel = new Label("Adjust Snapping")
+        {
+            style =
+            {
+                unityTextAlign = TextAnchor.UpperCenter
+            }
+        };
 
+        _sliderValue = new Label("0")
+        {
+            style =
+            {
+                unityTextAlign = TextAnchor.UpperCenter
+            }
+        };
         _prefabObjectField = new ObjectField { allowSceneObjects = true, objectType = typeof(GameObject) };
+        _sliderField = new Slider(0, 10);
 
         _toolRootElement.Add(titleLabel);
         _toolRootElement.Add(_prefabObjectField);
+        sliderLabel.style.marginTop = 10f;
+        
+        _toolRootElement.Add(sliderLabel);
+        _toolRootElement.Add(_sliderField);
+        _toolRootElement.Add(_sliderValue);
 
         var sv = SceneView.lastActiveSceneView;
         sv.rootVisualElement.Add(_toolRootElement);
@@ -105,6 +130,12 @@ public class WallPlacerTool : EditorTool
             Event.current.Use();
         }
 
+        if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Escape)
+        {
+            ToolManager.RestorePreviousTool();
+            return;
+        }
+
         if (!HasPlaceableObject)
         {
             _receivedClickDownEvent = false;
@@ -126,7 +157,7 @@ public class WallPlacerTool : EditorTool
             }
         }
     }
-
+    
     public override void OnToolGUI(EditorWindow window)
     {
         //If we're not in the scene view, we're not the active tool, we don't have a placeable object, exit.
@@ -138,6 +169,8 @@ public class WallPlacerTool : EditorTool
 
         if (!HasPlaceableObject)
             return;
+        
+        _sliderValue.text = _sliderField.value.ToString(CultureInfo.InvariantCulture);
 
         //Draw a positional Handle.
         Handles.DrawWireDisc(GetCurrentMousePositionInScene(), Vector3.up, 0.5f);
@@ -174,7 +207,7 @@ public class WallPlacerTool : EditorTool
     {
         Vector3 mousePosition = Event.current.mousePosition;
         HandleUtility.PlaceObject(mousePosition, out var newPosition, out _);
-        
+        newPosition.Set(Mathf.Round(newPosition.x) , newPosition.y, Mathf.RoundToInt(newPosition.z));
         return newPosition;
     }
 
