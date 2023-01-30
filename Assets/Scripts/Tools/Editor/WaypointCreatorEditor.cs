@@ -23,13 +23,8 @@ public class WaypointCreatorEditor : Editor
         // Only draw Waypoints when Toggle on
         if (!_isCreating) return;
         
-        // Let User Add (0,0,0) Waypoint via Button
-        if (GUILayout.Button("Add Waypoint"))
-        {
-            GameObject waypoint = new GameObject("Waypoint " + (waypointCreator.waypoints.waypoints.Count + 1));
-            waypointCreator.waypoints.waypoints.Add(waypoint.transform);
-            EditorUtility.SetDirty(waypointCreator);
-        }
+        if(waypointCreator.waypoints.waypoints.Count > 0 && waypointCreator.waypoints.waypoints[0] == null)
+            waypointCreator.LoadData();
 
         //Remove last added Waypoint
         if (GUILayout.Button("Remove Waypoint"))
@@ -46,6 +41,7 @@ public class WaypointCreatorEditor : Editor
                         waypointCreator.waypoints.waypoints[i].name = "Waypoint " + (i + 1);
                     }
                     EditorUtility.SetDirty(this);
+                    waypointCreator.SaveData();
                 }
             }
         }
@@ -83,6 +79,8 @@ public class WaypointCreatorEditor : Editor
                 waypointCreator.waypoints.waypoints.Add(_lastWaypoint.transform);
                 EditorUtility.SetDirty(waypointCreator);
             }
+            
+            waypointCreator.SaveData();
         }
 
         if(waypointCreator.waypoints.waypoints.Count > 0)
