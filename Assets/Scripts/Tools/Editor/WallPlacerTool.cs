@@ -1,12 +1,14 @@
-using System;
 using System.Globalization;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.EditorTools;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+/*
+ * This Tool uses the basic structure of https://github.com/bzgeb/PlaceObjectsTool/blob/main/Assets/PlaceObjectsTool/Editor/PlaceObjectsTool.cs
+ */
 [EditorTool("Place Walls Tool")]
 public class WallPlacerTool : EditorTool
 {
@@ -16,7 +18,9 @@ public class WallPlacerTool : EditorTool
     private ObjectField _prefabObjectField;
     private Slider _sliderField;
     private Label _sliderValue;
-
+    private Vector3 _startPosition;
+    private bool _firstClick;
+    
     private static Plane _sGroundPlane = new(Vector3.up, Vector3.zero);
 
     private bool _receivedClickDownEvent;
@@ -36,13 +40,13 @@ public class WallPlacerTool : EditorTool
     {
         HandleUtility.placeObjectCustomPasses += PlaneRaycast;
     }
+    
 
     private static bool PlaneRaycast(Vector2 mousePosition, out Vector3 position, out Vector3 normal)
     {
         var worldRay = HandleUtility.GUIPointToWorldRay(mousePosition);
         if (_sGroundPlane.Raycast(worldRay, out var distance))
         {
-            Debug.Log(distance);
             position = worldRay.GetPoint(distance);
             normal = _sGroundPlane.normal;
             return true;
@@ -54,6 +58,8 @@ public class WallPlacerTool : EditorTool
     }
     public override void OnActivated()
     {
+        _firstClick = true;
+
         //Create the UI
         _toolRootElement = new VisualElement
         {
@@ -121,14 +127,15 @@ public class WallPlacerTool : EditorTool
 
     private void BeforeSceneGUI(SceneView sceneView)
     {
+
         if (!ToolManager.IsActiveTool(this))
             return;
 
-        if (Event.current.type == EventType.MouseDown && Event.current.button == 1)
-        {
-            ShowMenu();
-            Event.current.Use();
-        }
+        // if (Event.current.type == EventType.MouseDown && Event.current.button == 1)
+        // {
+        //     ShowMenu();
+        //     Event.current.Use();
+        // }
 
         if (Event.current.type == EventType.KeyDown && Event.current.keyCode == KeyCode.Escape)
         {
@@ -143,7 +150,7 @@ public class WallPlacerTool : EditorTool
         }
         else
         {
-            if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
+            if (Event.current.type == EventType.MouseDown && Event.current.button == 0 && !Event.current.alt)
             {
                 _receivedClickDownEvent = true;
                 Event.current.Use();
@@ -174,12 +181,72 @@ public class WallPlacerTool : EditorTool
 
         //Draw a positional Handle.
         Handles.DrawWireDisc(GetCurrentMousePositionInScene(), Vector3.up, 0.5f);
+        if (!_firstClick) Handles.DrawLine(_startPosition, GetCurrentMousePositionInScene());
 
+        
         //If the user clicked, clone the selected object, place it at the current mouse position.
         if (_receivedClickUpEvent)
         {
-            var newObject = _prefabObjectField.value;
+            Debug.Log(_firstClick);
+            if (_firstClick)
+            {
+                _startPosition = GetCurrentMousePositionInScene();
+                _firstClick = false;
+                _receivedClickUpEvent = false;
+                return;
+            }
+            // var newObject = _prefabObjectField.value;
+            //
+            // GameObject newObjectInstance;
+            // if (PrefabUtility.IsPartOfAnyPrefab(newObject))
+            // {
+            //     var prefabPath = PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(newObject);
+            //     var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            //     newObjectInstance = (GameObject)PrefabUtility.InstantiatePrefab(prefab);
+            // }
+            // else
+            // {
+            //     newObjectInstance = Instantiate((GameObject)newObject);
+            // }
+            //
+            // newObjectInstance.transform.position = GetCurrentMousePositionInScene();
+            
 
+            // Undo.RegisterCreatedObjectUndo(newObjectInstance, "Place new object");
+            
+            InstantiateOnLine();
+            _firstClick = true;
+            _receivedClickUpEvent = false;
+        }
+
+        //Force the window to repaint.
+        window.Repaint();
+    }
+
+    private Vector3 GetCurrentMousePositionInScene()
+    {
+        Vector3 mousePosition = Event.current.mousePosition;
+        HandleUtility.PlaceObject(mousePosition, out var newPosition, out _);
+        newPosition.Set(Mathf.Round(newPosition.x) , newPosition.y, Mathf.RoundToInt(newPosition.z));
+        return newPosition;
+    }
+    
+    private void InstantiateOnLine()
+    {
+        var newObject = _prefabObjectField.value;
+        var mousePosition = GetCurrentMousePositionInScene();
+
+        
+        var direction = (mousePosition - _startPosition).normalized;
+        var distance = (mousePosition - _startPosition).magnitude;
+        var spacing = 5;
+        // _startPosition -= (direction * spacing / 2);
+        var numberOfObjects = (int) distance / spacing;
+        // Debug.Log(numberOfObjects + "Distance: " + distance + "Direction: " + direction);
+
+        for (var i = 0; i < numberOfObjects; i++)
+        {
+            
             GameObject newObjectInstance;
             if (PrefabUtility.IsPartOfAnyPrefab(newObject))
             {
@@ -191,33 +258,22 @@ public class WallPlacerTool : EditorTool
             {
                 newObjectInstance = Instantiate((GameObject)newObject);
             }
-
-            newObjectInstance.transform.position = GetCurrentMousePositionInScene();
-
-            Undo.RegisterCreatedObjectUndo(newObjectInstance, "Place new object");
-
-            _receivedClickUpEvent = false;
+            Debug.Log(_startPosition + (direction * spacing));
+            newObjectInstance.transform.position = _startPosition + (direction * spacing * i);
+            newObjectInstance.transform.LookAt(mousePosition);
+            newObjectInstance.transform.Rotate(Vector3.up, 90);
         }
 
-        //Force the window to repaint.
-        window.Repaint();
+        
     }
 
-    Vector3 GetCurrentMousePositionInScene()
-    {
-        Vector3 mousePosition = Event.current.mousePosition;
-        HandleUtility.PlaceObject(mousePosition, out var newPosition, out _);
-        newPosition.Set(Mathf.Round(newPosition.x) , newPosition.y, Mathf.RoundToInt(newPosition.z));
-        return newPosition;
-    }
-
-    void ShowMenu()
-    {
-        var picked = HandleUtility.PickGameObject(Event.current.mousePosition, true);
-        if (!picked) return;
-
-        var menu = new GenericMenu();
-        menu.AddItem(new GUIContent($"Pick {picked.name}"), false, () => { _prefabObjectField.value = picked; });
-        menu.ShowAsContext();
-    }
+    // private void ShowMenu()
+    // {
+    //     var picked = HandleUtility.PickGameObject(Event.current.mousePosition, true);
+    //     if (!picked) return;
+    //
+    //     var menu = new GenericMenu();
+    //     menu.AddItem(new GUIContent($"Pick {picked.name}"), false, () => { _prefabObjectField.value = picked; });
+    //     menu.ShowAsContext();
+    // }
 }
