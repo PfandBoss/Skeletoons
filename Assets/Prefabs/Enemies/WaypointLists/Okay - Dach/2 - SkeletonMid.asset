@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f84985054aa7d67448dddd2d421e3807, type: 3}
   m_Name: 2 - SkeletonMid
   m_EditorClassIdentifier: 
-  waypoints: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
