@@ -246,12 +246,27 @@
           <e p="Enemies" t="Include">
             <e p="WaypointLists" t="Include">
               <e p="Jonas - Dungeon" t="Include" />
+              <e p="JSonData" t="Include">
+                <e p="WaypointData_1 - RockEnemy.json" t="Include" />
+                <e p="WaypointData_2 - SkeletonMid.json" t="Include" />
+                <e p="WaypointData_3 - GhostEnemy.json" t="Include" />
+                <e p="WaypointData_4 - SkeletonsBarn.json" t="Include" />
+                <e p="WaypointData_4 - SkeletonsBarn2.json" t="Include" />
+                <e p="WaypointData_5 - RockBarn.json" t="Include" />
+                <e p="WaypointData_EG-Skelett0.json" t="Include" />
+                <e p="WaypointData_Enemy 1.json" t="Include" />
+                <e p="WaypointData_Enemy 2.json" t="Include" />
+                <e p="WaypointData_Enemy 3.json" t="Include" />
+                <e p="WaypointData_Enemy 4.json" t="Include" />
+              </e>
+              <e p="Lara - EG" t="Include" />
               <e p="Okay - Dach" t="Include" />
             </e>
           </e>
         </e>
         <e p="ProjectInfo" t="Include">
           <e p="Icons" t="Include" />
+          <e p="PowerPoint" t="Include" />
           <e p="Scripts" t="Include">
             <e p="Editor" t="Include">
               <e p="ReadmeEditor.cs" t="Include" />
@@ -262,9 +277,12 @@
         <e p="Scenes" t="Include">
           <e p="Gym" t="Include" />
           <e p="Jonas_Level" t="Include" />
-          <e p="Lara_Level" t="Include" />
+          <e p="Lara_Level" t="Include">
+            <e p="Groundlevel_Level" t="Include" />
+          </e>
           <e p="Lara_Test" t="Include">
             <e p="Door.cs" t="Include" />
+            <e p="InteractableItemsOverview.cs" t="Include" />
             <e p="InteractableObject.cs" t="Include" />
             <e p="Item.cs" t="Include" />
             <e p="ItemController.cs" t="Include" />
@@ -298,6 +316,7 @@
               <e p="WaypointCreatorEditor.cs" t="Include" />
             </e>
             <e p="WaypointCreator.cs" t="Include" />
+            <e p="WaypointData.cs" t="Include" />
             <e p="WaypointList.cs" t="Include" />
           </e>
         </e>

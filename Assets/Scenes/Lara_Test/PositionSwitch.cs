@@ -12,6 +12,7 @@ public class PositionSwitch : MonoBehaviour
     [SerializeField] float waitingTime = 1.0f;
     [SerializeField] Image image;
     private GameObject _player;
+    
 
 
     private void OnTriggerEnter(Collider col)
@@ -49,5 +50,16 @@ public class PositionSwitch : MonoBehaviour
             yield return null;
         }
         _player.GetComponent<CharacterController>().enabled = true;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (!InteractableItemsOverview.DrawingGizmos()) return;
+        
+        Gizmos.color = InteractableItemsOverview.TeleportColor();
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.DrawSphere(new Vector3(0, 0, 0), 0.1f);
+        Gizmos.matrix = Matrix4x4.identity;
+        Gizmos.DrawLine(gameObject.transform.position, position);
     }
 }

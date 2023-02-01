@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RaycastInteract",
+                    "type": "Button",
+                    "id": "c3d18cf7-2241-41d4-abe7-a6e0c3a28478",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -404,6 +413,17 @@
                     "action": "PuzzleNavigateLeftRight",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e200accd-e69e-4fbb-a067-c9dc23db09bf",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "RaycastInteract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

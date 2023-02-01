@@ -2,45 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 1.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 1.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 3.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 3.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 4.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Jonas - Dungeon/Enemy 4.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/1 - RockEnemy.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/1 - RockEnemy.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/2 - SkeletonMid.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/2 - SkeletonMid.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/3 - GhostEnemy.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/3 - GhostEnemy.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/4 - SkeletonsBarn.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/4 - SkeletonsBarn.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/4 - SkeletonsBarn2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/4 - SkeletonsBarn2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/5 - RockBarn.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Okay - Dach/5 - RockBarn.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointList.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointsTest.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointsTest.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/contentModel.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_EG-Skelett0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_EG-Skelett0.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 1.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 2.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 4.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Lara - EG.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Lara - EG/EG-Skelett0.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/Lara - EG/EG-Skelett0.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Level/Groundlevel_Level.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Level/Groundlevel_Level/NavMesh.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Level/Groundlevel_Level/NavMesh.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableItemsOverview.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableItemsOverview.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level/NavMesh.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Okay_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/Editor/WaypointCreatorEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/Editor/WaypointCreatorEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tools/WaypointCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/InputSystem/StarterAssets.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/InputSystem/StarterAssets.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/InputSystem/StarterAssetsInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/InputSystem/StarterAssetsInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Level/Groundlevel_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Level/Groundlevel_Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/PositionSwitch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/PositionSwitch.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,15 +54,20 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Core/CinemachineVirtualCameraBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@12.1.8/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableItemsOverview.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/ItemController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" />
+      <option value="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/InputSystem/StarterAssetsInputs.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" />
+      <option value="$PROJECT_DIR$/Assets/ImportedAssets/StarterAssets/ThirdPersonController/Scripts/ThirdPersonController.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Item.cs" />
       <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Locker.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/Door.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/PositionSwitch.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scenes/Lara_Test/InteractableItemsOverview.cs" />
     </changedPaths>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -166,6 +162,9 @@
       <workItem from="1674990410703" duration="3502000" />
       <workItem from="1675019291716" duration="8546000" />
       <workItem from="1675034679279" duration="1588000" />
+      <workItem from="1675178738801" duration="6793000" />
+      <workItem from="1675244773738" duration="6658000" />
+      <workItem from="1675256034959" duration="12808000" />
     </task>
     <servers />
   </component>

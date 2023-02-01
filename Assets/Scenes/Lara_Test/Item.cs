@@ -82,4 +82,13 @@ public class Item : MonoBehaviour
     {
         return _holding;
     }
+    
+    private void OnDrawGizmos()
+    {
+        if (!InteractableItemsOverview.DrawingGizmos()) return;
+        
+        Gizmos.color = InteractableItemsOverview.DoorColor();
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.DrawSphere(Vector3.zero, 0.2f);
+    }
 }

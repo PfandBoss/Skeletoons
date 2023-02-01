@@ -16,6 +16,7 @@ namespace StarterAssets
 		public bool sneek;
 		public bool shoot;
 		public bool interact;
+		public bool raycastinteract;
 		public Vector2 puzzleMove;
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -58,6 +59,11 @@ namespace StarterAssets
 		public void OnSneek(InputValue value)
 		{
 			SneekInput(value.isPressed);
+		}
+
+		public void OnRaycastInteract(InputValue value)
+		{
+			RaycastInteractInput(value.isPressed);
 		}
 
 		public void OnInteract(InputValue value)
@@ -107,6 +113,11 @@ namespace StarterAssets
 		public void ShootInput(bool newShootState)
 		{
 			shoot = newShootState;
+		}
+
+		public void RaycastInteractInput(bool newRaycastInteractState)
+		{
+			raycastinteract = newRaycastInteractState;
 		}
 
 		// public void InteractInput(bool newInteractState)
