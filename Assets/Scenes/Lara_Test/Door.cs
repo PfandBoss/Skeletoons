@@ -24,6 +24,7 @@ public class Door : MonoBehaviour
         // animate open door
         open = true;
         gameObject.GetComponentInParent<Animation>().Play();
+        key.GetComponent<Item>().DropDown();
     }
 
     private void OnDrawGizmos()

@@ -19,7 +19,7 @@ public class Item : MonoBehaviour
     public Transform itemContainer;
     
     // stand in
-    private KeyCode dropKey = KeyCode.E;
+    private KeyCode dropKey = KeyCode.K;
     
     // Start is called before the first frame update
     void Start()
