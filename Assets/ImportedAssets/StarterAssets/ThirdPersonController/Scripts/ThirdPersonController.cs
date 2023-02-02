@@ -109,6 +109,15 @@ namespace StarterAssets
 
         private bool _rotateOnMove = true;
         
+        // raycast interaction
+        [SerializeField] private int rayLength;
+        [SerializeField] private LayerMask interactionLayer;
+
+        private string _interactableTag = "Interactable";
+        private GameObject _raycastObject;
+        private InteractableObject _raycastInteractable;
+        private bool _interactBefore;
+        
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
 #endif
@@ -165,12 +174,18 @@ namespace StarterAssets
 
         private void Update()
         {
+            
+            if (Locker.isHiding()) return;
+            
             _hasAnimator = TryGetComponent(out _animator);
+            
+            // RaycastInteract();
 
             JumpAndGravity();
             GroundedCheck();
             Move();
             Interact();
+    
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -397,6 +412,33 @@ namespace StarterAssets
             }
         }
 
+        private void RaycastInteract()
+        {
+            if (_input.raycastinteract && !_interactBefore)
+            {
+                if (Locker.isHiding())
+                {
+                    _raycastObject.GetComponent<InteractableObject>().Interact(gameObject);
+                    return;
+                }
+            
+                Debug.Log("Shooting Ray");
+                Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+                if (Physics.Raycast(ray, out var hit, rayLength, interactionLayer))
+                {
+                    Debug.Log("Hit Obstacle");
+                    if (hit.collider.CompareTag(_interactableTag))
+                    {
+                        _raycastObject = hit.collider.gameObject;
+                        Debug.Log("Raycast hit: " + _raycastObject.name);
+                        _raycastObject.GetComponent<InteractableObject>().Interact(gameObject);
+                    }
+                }
+            }
+            _interactBefore = _input.raycastinteract;
+            }
+        
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;

@@ -19,7 +19,7 @@ public class Item : MonoBehaviour
     public Transform itemContainer;
     
     // stand in
-    private KeyCode dropKey = KeyCode.E;
+    private KeyCode dropKey = KeyCode.K;
     
     // Start is called before the first frame update
     void Start()
@@ -81,5 +81,14 @@ public class Item : MonoBehaviour
     public bool GetHolding()
     {
         return _holding;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (!InteractableItemsOverview.DrawingGizmos()) return;
+        
+        Gizmos.color = InteractableItemsOverview.DoorColor();
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.DrawSphere(Vector3.zero, 0.2f);
     }
 }
