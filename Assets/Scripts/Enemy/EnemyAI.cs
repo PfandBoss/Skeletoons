@@ -39,6 +39,8 @@ public class EnemyAI : MonoBehaviour
     private bool _scouting = false;
     private bool _boning = false;
 
+    public GameObject excl;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -204,6 +206,10 @@ public class EnemyAI : MonoBehaviour
         StartCoroutine(Scan());
         _navMesh.destination = bone.transform.position;
         _boning = true;
+        var anim = excl.GetComponent<Animator>();
+        if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("PopUp") &&
+            anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f))
+            excl.GetComponent<Animator>().SetTrigger("Detect");
     }
     
     private void OnFootstep(AnimationEvent animationEvent)

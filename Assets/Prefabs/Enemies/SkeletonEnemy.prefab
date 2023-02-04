@@ -220,6 +220,11 @@ PrefabInstance:
       propertyPath: senseRadius
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3856600055314423847, guid: c26833473ce06df4ba5631fd7a4b98bc,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c26833473ce06df4ba5631fd7a4b98bc, type: 3}
 --- !u!4 &2223841506210075223 stripped
