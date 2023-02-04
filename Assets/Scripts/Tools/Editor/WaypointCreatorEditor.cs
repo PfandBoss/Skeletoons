@@ -23,7 +23,8 @@ public class WaypointCreatorEditor : Editor
         // Only draw Waypoints when Toggle on
         if (!_isCreating) return;
         
-        if(waypointCreator.waypoints.waypoints.Count > 0 && waypointCreator.waypoints.waypoints[0] == null)
+        if(waypointCreator.waypoints.waypoints.Count > 0 && waypointCreator.waypoints.waypoints[0] == null ||
+           waypointCreator.waypoints.waypoints.Count == 0)
             waypointCreator.LoadData();
 
         //Remove last added Waypoint
@@ -78,9 +79,8 @@ public class WaypointCreatorEditor : Editor
                 _lastWaypoint.transform.position = hit.point;
                 waypointCreator.waypoints.waypoints.Add(_lastWaypoint.transform);
                 EditorUtility.SetDirty(waypointCreator);
+                waypointCreator.SaveData();
             }
-            
-            waypointCreator.SaveData();
         }
 
         if(waypointCreator.waypoints.waypoints.Count > 0)

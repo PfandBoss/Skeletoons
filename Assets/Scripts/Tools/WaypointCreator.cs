@@ -11,13 +11,15 @@ public class WaypointCreator : MonoBehaviour
     
     private void Awake()
     {
-        if(waypoints.waypoints.Count > 0 && waypoints.waypoints[0] == null)
+        if(waypoints.waypoints.Count > 0 && waypoints.waypoints[0] == null ||
+           waypoints.waypoints.Count == 0)
             LoadData();
     }
 
     private void Start()
     {
-        SaveData();
+        // if(waypoints.waypoints.Count > 0 && waypoints.waypoints[0] != null)
+        //     SaveData();
     }
 
     private void OnDrawGizmos()
