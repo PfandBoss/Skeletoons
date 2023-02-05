@@ -11,13 +11,13 @@ public class PositionSwitch : MonoBehaviour
     [SerializeField] float fadingTime = 1.0f;
     [SerializeField] float waitingTime = 1.0f;
     [SerializeField] Image image;
-    private GameObject _player;
+    [SerializeField] private GameObject _player;
     
 
 
     private void OnTriggerEnter(Collider col)
     {
-        if (!col.gameObject.CompareTag("Player")) return;
+        if (col.gameObject != _player) return;
         
         Debug.Log("Player entered " + col.gameObject.transform.position);
         _player = col.gameObject;
