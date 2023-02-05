@@ -85,6 +85,7 @@ public class ThirdPersonThrowingController : MonoBehaviour
             Vector3 aimDir = (mouseWorldPosition - spawnBonePosition.position).normalized;
             readyToThrow = false;
             GameObject projectile = Instantiate(objectToThrow, attackPoint.position, Quaternion.Euler(aimDir));
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/BoneThrow/Throw", transform.position);
             Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
 
             Vector3 forceToAdd = aimDir * throwForce + transform.up * (throwUpwardForce * ((aimDir.y - -0.5f) / (0.5f - -0.5f)));

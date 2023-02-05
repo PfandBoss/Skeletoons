@@ -13,6 +13,7 @@ public class BoneProjectile : MonoBehaviour
    private void OnTriggerEnter(Collider other)
    {
       //Debug.Log("IM Checking");
+      FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/BoneThrow/Bone", transform.position);
       Collider[] hitColliders = Physics.OverlapSphere(transform.position, baitRadius);
       foreach (var hitCollider in hitColliders)
       {

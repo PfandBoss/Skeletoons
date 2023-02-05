@@ -6,8 +6,8 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
-    [SerializeField] private GameObject key;
-    [SerializeField] private bool open = false;
+    [SerializeField] protected GameObject key;
+    [SerializeField] protected bool open = false;
 
     public void Interact()
     {
@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void OpenDoor()
+    protected virtual void OpenDoor()
     {
         // animate open door
         open = true;

@@ -17,6 +17,7 @@ public class Item : MonoBehaviour
     [SerializeField] private bool scaleDown = true;
     [SerializeField] private Vector3 scale = Vector3.one;
     public Transform itemContainer;
+    public Transform finalParent;
     
     // stand in
     private KeyCode dropKey = KeyCode.K;
@@ -76,6 +77,18 @@ public class Item : MonoBehaviour
         _rb.AddForce(Vector3.down * dropDownForce, ForceMode.Impulse);
         float random = Random.Range(-1f, 1f);
         _rb.AddTorque(new Vector3(random, random, random) * 10);
+    }
+    
+    public void DropOn()
+    {
+        _holding = false;
+        ItemController.HoldingItem = false;
+        ItemController.HeldItem = null;
+
+        transform.SetParent(finalParent);
+
+        transform.localScale = _itemScale;
+        transform.position = new Vector3(0.2826202f, 12.291f, 21.106f);
     }
 
     public bool GetHolding()
