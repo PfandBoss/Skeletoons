@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,7 @@
       <workItem from="1675256034959" duration="12808000" />
       <workItem from="1675276323939" duration="1928000" />
       <workItem from="1675330991423" duration="3005000" />
-      <workItem from="1675693915160" duration="3650000" />
+      <workItem from="1675693915160" duration="4136000" />
     </task>
     <servers />
   </component>
