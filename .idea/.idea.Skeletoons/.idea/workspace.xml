@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="473c08cc-29c0-4646-8b5f-a78b40ea91ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/PlayUI.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/PlayUI.controller.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Skeletoons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/LevelChanger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/LevelChanger.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/PopUp.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/PopUp.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pause.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pause.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_Enemy 3.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Jonas_Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lara_Test/RaycastInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +149,7 @@
       <workItem from="1675256034959" duration="12808000" />
       <workItem from="1675276323939" duration="1928000" />
       <workItem from="1675330991423" duration="3005000" />
-      <workItem from="1675693915160" duration="3211000" />
+      <workItem from="1675693915160" duration="3650000" />
     </task>
     <servers />
   </component>
