@@ -136,6 +136,7 @@ public class EnemyAI : MonoBehaviour
         _navMesh.destination = _player.transform.position;
         var emitter = GameObject.Find("MusicController").GetComponent<FMODUnity.StudioEventEmitter>();
         emitter.SetParameter("ChaseStage", 1);
+        excl.GetComponent<Animator>().SetTrigger("Detect");
         _navMesh.speed = 3.4f;
         animationSpeed = 1.5f;
         _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.3f;
