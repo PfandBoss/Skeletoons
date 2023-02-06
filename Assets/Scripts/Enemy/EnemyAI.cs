@@ -40,6 +40,7 @@ public class EnemyAI : MonoBehaviour
     private bool _boning = false;
 
     public GameObject excl;
+    public GameObject MusicController;
 
     // Start is called before the first frame update
     void Awake()
@@ -133,26 +134,35 @@ public class EnemyAI : MonoBehaviour
         _scouting = false;
         _navMesh.isStopped = false;
         _navMesh.destination = _player.transform.position;
-        _navMesh.speed = 4.5f;
+        var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
+        emitter.SetParameter("ChaseStage", 1);
+        excl.GetComponent<Animator>().SetTrigger("Detect");
+        _navMesh.speed = 3.4f;
         animationSpeed = 1.5f;
-        _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.75f;
-        _player.GetComponentInParent<ThirdPersonController>().SprintSpeed = 1.2f;
+        _player.GetComponentInParent<ThirdPersonController>().MoveSpeed = 0.3f;
+        _player.GetComponentInParent<ThirdPersonController>().SprintSpeed = 0.7f;
     }
 
     
     private void CatchPlayer()
     {
         _navMesh.destination = _player.transform.position;
-        if (Vector3.Distance(transform.position, _player.transform.position) <= 1f)
+        var distance = Vector3.Distance(transform.position, _player.transform.position);
+        if (distance <= 1f)
         {
             fading.GetComponent<Animator>().SetTrigger("FadeOut");
             StartCoroutine(RestartAfterDelay());
+        }
+        else if (distance <= 3f)
+        {
+            var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
+            emitter.SetParameter("ChaseStage", 2);
         }
     }
 
     private IEnumerator RestartAfterDelay()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         Restart();
     }
 
@@ -195,6 +205,16 @@ public class EnemyAI : MonoBehaviour
     }
 
 
+    private IEnumerator PlaySounds()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(3f, 10f));
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Monster", transform.position);
+        }
+    }
+
+
     public void Distract(GameObject bone)
     {
         if(_seePlayer)
@@ -216,12 +236,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (animationEvent.animatorClipInfo.weight > 0.5f)
         {
-            if (FootstepAudioClips.Length > 0)
-            {
-                var index = Random.Range(0, FootstepAudioClips.Length);
-                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.position,
-                    FootstepAudioVolume * 2f);
-            }
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/EnemyFootstepsMonster", transform.position);
         }
     }
     
@@ -255,5 +270,11 @@ public class EnemyAI : MonoBehaviour
 
             return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
         }
+    }
+
+
+    public bool SeePlayer()
+    {
+        return _seePlayer;
     }
 }

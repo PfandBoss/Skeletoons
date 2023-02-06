@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{551ef404-eee7-46ec-99a3-e7259b36dfe9}">
+		<property name="name">
+			<value>Bossfight</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d58caf55-d283-450b-a735-9d4ea3541667}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fbfb244a-e5a4-43a1-85a1-1f2ec7b533b5}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fbfb244a-e5a4-43a1-85a1-1f2ec7b533b5}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -12,14 +12,16 @@ public class BoneProjectile : MonoBehaviour
    [SerializeField] private float baitRadius = 7f;
    private void OnTriggerEnter(Collider other)
    {
-      //Debug.Log("IM Checking");
-      Collider[] hitColliders = Physics.OverlapSphere(transform.position, baitRadius);
-      foreach (var hitCollider in hitColliders)
+      FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/BoneThrow/Bone", transform.position);
+      if (other.gameObject.GetComponent<CharacterController>() == null)
       {
-         if (hitCollider.gameObject.GetComponent<EnemyAI>() as EnemyAI != null)
+         Collider[] hitColliders = Physics.OverlapSphere(transform.position, baitRadius);
+         foreach (var hitCollider in hitColliders)
          {
-            hitCollider.gameObject.GetComponent<EnemyAI>().Distract(this.gameObject);
-            
+            if (hitCollider.gameObject.GetComponent<EnemyAI>() as EnemyAI != null)
+            {
+               hitCollider.gameObject.GetComponent<EnemyAI>().Distract(this.gameObject);
+            }
          }
       }
       Invoke(nameof(Delete),4f);

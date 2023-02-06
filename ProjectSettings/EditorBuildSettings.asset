@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gym.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Jonas_Level.unity
+    guid: 6b72029e9b5d07346acefcf2ff4a5739
+  - enabled: 1
+    path: Assets/Scenes/Lara_Level/Groundlevel_Level.unity
+    guid: f94b657da8210184bba38c7d5142428f
+  - enabled: 1
+    path: Assets/Scenes/Okay_Test.unity
+    guid: 76e672dd15538f949b798c0bd34c6bf8
+  - enabled: 1
+    path: Assets/Scenes/Leon_Level/Level_Outside.unity
+    guid: 636aaeef97311114a8d875de0b3783fe
   m_configObjects: {}

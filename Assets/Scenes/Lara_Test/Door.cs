@@ -6,6 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
 
+
     [SerializeField] private GameObject key;
     [SerializeField] private bool open = false;
     [SerializeField] private GameObject infoText;
@@ -16,6 +17,7 @@ public class Door : MonoBehaviour
         
         if (key == null | key.GetComponent<Item>().GetHolding())
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Door", transform.position);
             OpenDoor();
         }
         else
@@ -25,7 +27,7 @@ public class Door : MonoBehaviour
         }
     }
 
-    private void OpenDoor()
+    protected virtual void OpenDoor()
     {
         // animate open door
         open = true;
