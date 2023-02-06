@@ -52,7 +52,7 @@ public class Interactable : MonoBehaviour
         for (var i = 0; i < totalRings; i++)
         {
             print(rings[i].transform.rotation.eulerAngles.z);
-            if (rings[i].transform.rotation.eulerAngles.z != solution[i])
+            if (Math.Abs(rings[i].transform.rotation.eulerAngles.z - solution[i]) > TOLERANCE)
             {
                 solved = false;
                 break;
@@ -61,4 +61,6 @@ public class Interactable : MonoBehaviour
         }
         if (solved) print("SOLVED");
     }
+
+    private const double TOLERANCE = 1;
 }
