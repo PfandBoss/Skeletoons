@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicController : MonoBehaviour
 {
     private static MusicController _musicCtrlInstance;
-    
-    [SerializeField] private List<EnemyAI> Enemies;
-    
+    [SerializeField] private List<FMODUnity.StudioEventEmitter> emitters;
+    private FMODUnity.StudioEventEmitter _currentEmitter;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,16 +22,26 @@ public class MusicController : MonoBehaviour
             return;
         }
         
-        var emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-        if (!emitter.IsPlaying())
+        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex-1];
+        if (!_currentEmitter.IsPlaying())
         {
-            emitter.Play();
+            _currentEmitter.Play();
         }
-        emitter.SetParameter("ChaseStage", 0);
+        _currentEmitter.SetParameter("ChaseStage", 0);
     }
 
-    // Update is called once per frame
-    void Update()
+    public FMODUnity.StudioEventEmitter GetCurrentEmitter()
     {
+        return _currentEmitter;
+    }
+
+    public void PlayNextLevel()
+    {
+        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex];
+        if (!_currentEmitter.IsPlaying())
+        {
+            _currentEmitter.Play();
+        }
+        _currentEmitter.SetParameter("ChaseStage", 0);
     }
 }

@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
         
         if (key == null | key.GetComponent<Item>().GetHolding())
         {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Door", transform.position);
             OpenDoor();
         }
     }

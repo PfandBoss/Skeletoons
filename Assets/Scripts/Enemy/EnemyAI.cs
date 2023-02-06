@@ -134,7 +134,7 @@ public class EnemyAI : MonoBehaviour
         _scouting = false;
         _navMesh.isStopped = false;
         _navMesh.destination = _player.transform.position;
-        var emitter = GameObject.Find("MusicController").GetComponent<FMODUnity.StudioEventEmitter>();
+        var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
         emitter.SetParameter("ChaseStage", 1);
         excl.GetComponent<Animator>().SetTrigger("Detect");
         _navMesh.speed = 3.4f;
@@ -153,9 +153,9 @@ public class EnemyAI : MonoBehaviour
             fading.GetComponent<Animator>().SetTrigger("FadeOut");
             StartCoroutine(RestartAfterDelay());
         }
-        else if (distance <= 6.5f)
+        else if (distance <= 3f)
         {
-            var emitter = GameObject.Find("MusicController").GetComponent<FMODUnity.StudioEventEmitter>();
+            var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
             emitter.SetParameter("ChaseStage", 2);
         }
     }
