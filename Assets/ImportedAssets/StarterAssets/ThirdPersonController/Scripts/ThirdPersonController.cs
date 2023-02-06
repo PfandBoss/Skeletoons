@@ -90,7 +90,8 @@ namespace StarterAssets
         private float _terminalVelocity = 53.0f;
         
         // interaction
-        private bool _interacting = false;
+        private bool _canInteract;
+        private bool _interacting;
         private Interactable _interactable;
 
         // timeout deltatime
@@ -187,7 +188,7 @@ namespace StarterAssets
             Interact();
     
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && _canInteract)
             {
                 _interacting = !_interacting;
             }
@@ -488,6 +489,7 @@ namespace StarterAssets
 
         public void SetInteractable(Interactable interactable)
         {
+            _canInteract = true;
             _interactable = interactable;
         }
     }

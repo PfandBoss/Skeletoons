@@ -92,6 +92,8 @@ public class ThirdPersonThrowingController : MonoBehaviour
             
             projectileRigidbody.AddForce(forceToAdd,ForceMode.Impulse);
             totalThrows--;
+            GetComponent<ThrowCooldown>().StartCooldown();
+            readyToThrow = false;
             Invoke(nameof(ResetThrow),throwCooldown);
             _starterAssetsInputs.shoot = false;
         }
