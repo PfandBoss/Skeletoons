@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{cd8f019a-4e42-479a-867d-2c806feda8bd}">
+		<property name="name">
+			<value>ChaseStage</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d58caf55-d283-450b-a735-9d4ea3541667}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{0569ae8f-e8e1-4d19-be9d-9a9d75116fd7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{0569ae8f-e8e1-4d19-be9d-9a9d75116fd7}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

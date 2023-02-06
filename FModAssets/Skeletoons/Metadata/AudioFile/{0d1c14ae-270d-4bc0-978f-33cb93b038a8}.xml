@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0d1c14ae-270d-4bc0-978f-33cb93b038a8}">
+		<property name="assetPath">
+			<value>Sound Effects/Skeletoons_SFX_Chest.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a57a6040-2b43-421d-a428-0a9cb53477ee}</destination>
+		</relationship>
+	</object>
+</objects>

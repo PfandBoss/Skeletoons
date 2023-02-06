@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4aa219f0-8385-486f-8f6f-78fb21fc9a6b}">
+		<property name="assetPath">
+			<value>Sound Effects/Skletoons_SFX_ATMO_Garten.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>264.62187499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a57a6040-2b43-421d-a428-0a9cb53477ee}</destination>
+		</relationship>
+	</object>
+</objects>

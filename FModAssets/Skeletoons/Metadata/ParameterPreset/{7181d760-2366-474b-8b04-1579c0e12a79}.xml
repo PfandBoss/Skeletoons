@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{7181d760-2366-474b-8b04-1579c0e12a79}">
+		<property name="name">
+			<value>LevelReset</value>
+		</property>
+		<relationship name="folder">
+			<destination>{d58caf55-d283-450b-a735-9d4ea3541667}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{32020155-3a83-4eb0-af85-db1c9caa1f2b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{32020155-3a83-4eb0-af85-db1c9caa1f2b}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
