@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<CharacterController>() != null)
         {
             other.GetComponent<ThirdPersonController>().SetInteractable(this);
         }

@@ -184,7 +184,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-            //Interact();
+            Interact();
     
 
             if (Input.GetKeyDown(KeyCode.E))
