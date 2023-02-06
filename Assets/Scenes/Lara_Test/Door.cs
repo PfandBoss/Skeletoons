@@ -7,8 +7,8 @@ public class Door : MonoBehaviour
 {
 
 
-    [SerializeField] private GameObject key;
-    [SerializeField] private bool open = false;
+    [SerializeField] protected GameObject key;
+    [SerializeField] protected bool open = false;
     [SerializeField] private GameObject infoText;
 
     public void Interact()
