@@ -23,8 +23,6 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private LayerMask obstacles;
     private GameObject _player;
     private bool _seePlayer = false;
-    [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
-    public AudioClip[] FootstepAudioClips;
     
     private float _animationBlend;
     private int _animIDSpeed;
@@ -40,7 +38,6 @@ public class EnemyAI : MonoBehaviour
     private bool _boning = false;
 
     public GameObject excl;
-    public GameObject MusicController;
 
     // Start is called before the first frame update
     void Awake()

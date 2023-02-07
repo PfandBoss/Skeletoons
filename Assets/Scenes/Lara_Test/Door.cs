@@ -9,9 +9,9 @@ public class Door : MonoBehaviour
 
     [SerializeField] protected GameObject key;
     [SerializeField] protected bool open = false;
-    [SerializeField] private GameObject infoText;
+    [SerializeField] protected GameObject infoText;
 
-    public void Interact()
+    public virtual void Interact()
     {
         if (open) return;
         
@@ -23,7 +23,7 @@ public class Door : MonoBehaviour
         else
         {
             infoText.SetActive(true);
-            Invoke(nameof(resetInfo),1.0f);
+            Invoke(nameof(resetInfo),3.0f);
         }
     }
 
@@ -33,6 +33,7 @@ public class Door : MonoBehaviour
         open = true;
         gameObject.GetComponentInParent<Animation>().Play();
         key.GetComponent<Item>().DropDown();
+        Invoke(nameof(DestroyKey), 2f);
     }
 
     private void OnDrawGizmos()
@@ -46,8 +47,13 @@ public class Door : MonoBehaviour
         Gizmos.DrawLine(gameObject.transform.position + Vector3.up, key.transform.position);
     }
     
-    private void resetInfo()
+    protected void resetInfo()
     {
         infoText.SetActive(false);
+    }
+
+    private void DestroyKey()
+    {
+        Destroy(key);
     }
 }
