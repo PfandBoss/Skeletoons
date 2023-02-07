@@ -39,6 +39,8 @@ public class EnemyAI : MonoBehaviour
 
     public GameObject excl;
 
+    [SerializeField] private float catchDistance = 1f;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -145,7 +147,7 @@ public class EnemyAI : MonoBehaviour
     {
         _navMesh.destination = _player.transform.position;
         var distance = Vector3.Distance(transform.position, _player.transform.position);
-        if (distance <= 1f)
+        if (distance <= catchDistance)
         {
             fading.GetComponent<Animator>().SetTrigger("FadeOut");
             StartCoroutine(RestartAfterDelay());
