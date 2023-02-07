@@ -59,7 +59,7 @@ public class Interactable : MonoBehaviour
             }
 
         }
-        if (solved) print("SOLVED");
+        if (solved) Destroy(this.gameObject);
     }
 
     private const double TOLERANCE = 1;
