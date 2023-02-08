@@ -492,5 +492,11 @@ namespace StarterAssets
             _canInteract = true;
             _interactable = interactable;
         }
+
+        public void ResetInteractable(Interactable interactable)
+        {
+            _canInteract = false;
+            _interactable = null;
+        }
     }
 }

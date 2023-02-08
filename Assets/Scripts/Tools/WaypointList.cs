@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "WaypointList")]
 public class WaypointList : ScriptableObject
 {
-    public List<Transform> waypoints;
+    public List<Transform> waypoints = new List<Transform>();
 }

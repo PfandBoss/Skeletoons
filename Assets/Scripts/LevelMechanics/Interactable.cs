@@ -21,6 +21,14 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<CharacterController>() != null)
+        {
+            other.GetComponent<ThirdPersonController>().ResetInteractable(this);
+        }
+    }
+
     private void Start()
     {
         totalRings = 3;
