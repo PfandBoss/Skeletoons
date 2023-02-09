@@ -19,7 +19,7 @@ public class ThrowCooldown : MonoBehaviour
     private void Update()
     {
         remainingCooldownTime -= Time.deltaTime;
-        // coooldownIcon.fillAmount = remainingCooldownTime / cooldownTime;
+        coooldownIcon.fillAmount = remainingCooldownTime / cooldownTime;
     }
 
     public void StartCooldown()
