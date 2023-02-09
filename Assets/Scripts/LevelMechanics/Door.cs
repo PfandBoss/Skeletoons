@@ -59,4 +59,8 @@ public class Door : MonoBehaviour
     {
         Destroy(key);
     }
+
+    public void SetKey(GameObject newKey) {
+        key = newKey;
+    }
 }

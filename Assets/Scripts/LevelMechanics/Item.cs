@@ -90,7 +90,12 @@ public class Item : MonoBehaviour
         return _holding;
     }
 
+    public void SetContainer(Transform container) {
+        itemContainer = container;
+    }
+    
     #if UNITY_EDITOR
+    
     private void OnDrawGizmos()
     {
         if (!InteractableItemsOverview.DrawingGizmos()) return;
