@@ -22,7 +22,7 @@ public class MusicController : MonoBehaviour
             return;
         }
         
-        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex-1];
+        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex];
         if (!_currentEmitter.IsPlaying())
         {
             _currentEmitter.Play();
@@ -37,7 +37,7 @@ public class MusicController : MonoBehaviour
 
     public void PlayNextLevel()
     {
-        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex];
+        _currentEmitter = emitters[SceneManager.GetActiveScene().buildIndex+1];
         if (!_currentEmitter.IsPlaying())
         {
             _currentEmitter.Play();
