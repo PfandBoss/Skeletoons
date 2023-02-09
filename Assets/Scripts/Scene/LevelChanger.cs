@@ -15,6 +15,7 @@ public class LevelChanger : MonoBehaviour
     {
         var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
         int scene = SceneManager.GetActiveScene().buildIndex;
+        print(scene);
         switch (scene)
         {
             case 0:
@@ -35,7 +36,7 @@ public class LevelChanger : MonoBehaviour
                 return;
             case 4:
                 emitter.SetParameter("Level4Done", 1);
-                StartCoroutine(EndGameAfterDelay(15f, emitter));
+                StartCoroutine(EndGameAfterDelay(3f, emitter));
                 return;
             default:
                 return;
@@ -54,6 +55,7 @@ public class LevelChanger : MonoBehaviour
     private IEnumerator EndGameAfterDelay(float delay, FMODUnity.StudioEventEmitter emitter)
     {
         yield return new WaitForSeconds(delay);
+        print("QUTTING");
         emitter.Stop();
         Application.Quit();
     }
