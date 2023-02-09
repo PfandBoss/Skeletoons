@@ -1,8 +1,10 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+
 
 public class InteractableItemsOverview : EditorWindow
 {
@@ -22,6 +24,7 @@ public class InteractableItemsOverview : EditorWindow
     [MenuItem("Window/Interactable Items Overview")]
     static void Init()
     {
+        
         // Get existing open window or create a new one
         InteractableItemsOverview window =
             (InteractableItemsOverview) EditorWindow.GetWindow(typeof(InteractableItemsOverview));
@@ -75,3 +78,4 @@ public class InteractableItemsOverview : EditorWindow
         return _teleportColor;
     }
 }
+#endif

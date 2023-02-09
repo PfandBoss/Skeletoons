@@ -31,17 +31,6 @@ public class BoneProjectile : MonoBehaviour
    {
       Destroy(this.gameObject);
    }
-   
-   [CustomEditor(typeof(BoneProjectile))]
-   public class BoneRadiusEditor : Editor
-   {
-      private void OnSceneGUI()
-      {
-         BoneProjectile bone = (BoneProjectile)target;
-         Handles.color = Color.yellow;
-         Handles.DrawWireArc(bone.transform.position, Vector3.up, Vector3.forward, 360, bone.baitRadius);
-      }
-   }
 
    private void Awake()
    {

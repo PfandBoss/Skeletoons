@@ -52,6 +52,7 @@ public class PositionSwitch : MonoBehaviour
         _player.GetComponent<CharacterController>().enabled = true;
     }
     
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (!InteractableItemsOverview.DrawingGizmos()) return;
@@ -62,4 +63,5 @@ public class PositionSwitch : MonoBehaviour
         Gizmos.matrix = Matrix4x4.identity;
         Gizmos.DrawLine(gameObject.transform.position, position);
     }
+    #endif
 }

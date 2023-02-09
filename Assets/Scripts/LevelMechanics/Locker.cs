@@ -81,6 +81,7 @@ public class Locker : MonoBehaviour
         return hiding;
     }
 
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (!InteractableItemsOverview.DrawingGizmos()) return;
@@ -89,4 +90,5 @@ public class Locker : MonoBehaviour
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.DrawSphere(new Vector3(0, 0.25f, 0), 0.1f);
     }
+    #endif
 }

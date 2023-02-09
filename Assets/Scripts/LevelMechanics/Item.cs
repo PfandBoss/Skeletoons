@@ -89,7 +89,8 @@ public class Item : MonoBehaviour
     {
         return _holding;
     }
-    
+
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (!InteractableItemsOverview.DrawingGizmos()) return;
@@ -98,4 +99,5 @@ public class Item : MonoBehaviour
         Gizmos.matrix = transform.localToWorldMatrix;
         Gizmos.DrawSphere(Vector3.zero, 0.2f);
     }
+    #endif
 }

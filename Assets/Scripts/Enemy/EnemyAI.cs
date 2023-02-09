@@ -238,38 +238,6 @@ public class EnemyAI : MonoBehaviour
             FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/EnemyFootstepsMonster", transform.position);
         }
     }
-    
-    
-    [CustomEditor(typeof(EnemyAI))]
-    public class FieldOfViewEditor : Editor
-    {
-        private void OnSceneGUI()
-        {
-            EnemyAI vision = (EnemyAI)target;
-            Handles.color = Color.yellow;
-            Handles.DrawWireArc(vision.transform.position, Vector3.up, Vector3.forward, 360, vision.senseRadius);
-
-            Vector3 viewAngle01 = DirectionFromAngle(vision.transform.eulerAngles.y, -vision.viewAngle / 2);
-            Vector3 viewAngle02 = DirectionFromAngle(vision.transform.eulerAngles.y, vision.viewAngle / 2);
-
-            Handles.color = Color.magenta;
-            Handles.DrawLine(vision.transform.position, vision.transform.position + viewAngle01 * vision.senseRadius);
-            Handles.DrawLine(vision.transform.position, vision.transform.position + viewAngle02 * vision.senseRadius);
-
-            if (vision._seePlayer)
-            {
-                Handles.color = Color.green;
-                Handles.DrawLine(vision.transform.position, vision._player.transform.position);
-            }
-        }
-
-        private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
-        {
-            angleInDegrees += eulerY;
-
-            return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-        }
-    }
 
 
     public bool SeePlayer()

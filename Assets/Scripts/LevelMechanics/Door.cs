@@ -36,6 +36,8 @@ public class Door : MonoBehaviour
         Invoke(nameof(DestroyKey), 2f);
     }
 
+    
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         if (!InteractableItemsOverview.DrawingGizmos()) return;
@@ -46,6 +48,7 @@ public class Door : MonoBehaviour
         Gizmos.matrix = Matrix4x4.identity;
         Gizmos.DrawLine(gameObject.transform.position + Vector3.up, key.transform.position);
     }
+    #endif
     
     protected void resetInfo()
     {

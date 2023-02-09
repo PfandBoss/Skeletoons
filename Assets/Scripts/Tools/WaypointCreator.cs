@@ -52,13 +52,13 @@ public class WaypointCreator : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(data);
-        string path = Application.dataPath + $"/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_{waypoints.name}.json";
+        string path = Application.dataPath + $"/StreamingAssets/WaypointLists/JSonData/WaypointData_{waypoints.name}.json";
         File.WriteAllText(path, json);
     }
     
     public void LoadData()
     {
-        string path = Application.dataPath + $"/Prefabs/Enemies/WaypointLists/JSonData/WaypointData_{waypoints.name}.json";
+        string path = Application.dataPath + $"/StreamingAssets/WaypointLists/JSonData/WaypointData_{waypoints.name}.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
