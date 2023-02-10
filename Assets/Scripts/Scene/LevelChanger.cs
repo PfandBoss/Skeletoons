@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
+    [SerializeField] private Animator fading;
     private void OnTriggerEnter(Collider other)
     {
         LoadNextScene();
@@ -19,7 +20,7 @@ public class LevelChanger : MonoBehaviour
         {
             case 0:
                 emitter.SetParameter("GameStarted", 1);
-                StartCoroutine(LoadAfterDelay(3f, emitter));
+                StartCoroutine(LoadAfterDelay(4f, emitter));
                 return;
             case 1:
                 emitter.SetParameter("Level1Done", 1);
@@ -35,7 +36,7 @@ public class LevelChanger : MonoBehaviour
                 return;
             case 4:
                 emitter.SetParameter("Level4Done", 1);
-                StartCoroutine(EndGameAfterDelay(3f, emitter));
+                StartCoroutine(EndGameAfterDelay(45f, emitter));
                 return;
             default:
                 return;
@@ -44,6 +45,7 @@ public class LevelChanger : MonoBehaviour
 
     private IEnumerator LoadAfterDelay(float delay, FMODUnity.StudioEventEmitter emitter)
     {
+        fading.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(delay/2f);
         GameObject.Find("MusicController").GetComponent<MusicController>().PlayNextLevel();
         yield return new WaitForSeconds(delay);
@@ -53,6 +55,7 @@ public class LevelChanger : MonoBehaviour
     
     private IEnumerator EndGameAfterDelay(float delay, FMODUnity.StudioEventEmitter emitter)
     {
+        fading.GetComponent<Animator>().SetTrigger("FadeOut");
         yield return new WaitForSeconds(delay);
         emitter.Stop();
         Application.Quit();

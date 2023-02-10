@@ -156,6 +156,8 @@ public class EnemyAI : MonoBehaviour
         {
             var emitter = GameObject.Find("MusicController").GetComponent<MusicController>().GetCurrentEmitter();
             emitter.SetParameter("ChaseStage", 2);
+            if(SceneManager.GetActiveScene().buildIndex == 2)
+                emitter.SetParameter("BossFight", 0);
         }
     }
 
